@@ -29,20 +29,26 @@ import {
     SiRedis,
     SiInstagram,
     SiSequelize,
-    SiJsonwebtokens
+    SiJsonwebtokens,
+    SiAwslambda,
+    SiAmazon,
+    SiAmazondynamodb,
+    SiAmazonapigateway,
+    SiOpenjdk,
+    SiCloudinary
 } from 'react-icons/si';
 
 import { VscVscode } from 'react-icons/vsc';
-import { 
-    FaEnvelope, 
-    FaPhone, 
-    FaMapMarkerAlt, 
-    FaCode, 
-    FaDatabase, 
-    FaNetworkWired, 
-    FaMicrochip, 
-    FaCogs, 
-    FaProjectDiagram, 
+import {
+    FaEnvelope,
+    FaPhone,
+    FaMapMarkerAlt,
+    FaCode,
+    FaDatabase,
+    FaNetworkWired,
+    FaMicrochip,
+    FaCogs,
+    FaProjectDiagram,
     FaCloud,
     FaServer,
     FaTerminal
@@ -188,22 +194,22 @@ export const educationData = [
 export const internshipData = [
     {
         id: "intern-1",
-        company: "[COMPANY NAME]",
-        role: "Software Developer Intern",
-        duration: "[MONTH YEAR] – [MONTH YEAR]",
-        location: "[CITY / REMOTE]",
+        company: "AWS Student Builder Group – PICT",
+        role: "Project Contributor (Intern)",
+        duration: "February 2026 – April 2026",
+        location: "Pune, Maharashtra",
         technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "Node.js", icon: SiNodedotjs, brandColor: "#339933" },
-            { name: "Express.js", icon: SiExpress, brandColor: "#000000" },
-            { name: "MySQL", icon: SiMysql, brandColor: "#4479A1" }
+            { name: "AWS Lambda", icon: SiAwslambda, brandColor: "#FF9900" },
+            { name: "EventBridge", icon: SiAmazon, brandColor: "#FF9900" },
+            { name: "DynamoDB", icon: SiAmazondynamodb, brandColor: "#4053D6" },
+            { name: "Python", icon: SiPython, brandColor: "#3776AB" },
+            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" }
         ],
         achievements: [
-            "Developed responsive user interface components using React.js and modern CSS.",
-            "Built modular RESTful API endpoints using Node.js and Express.",
-            "Integrated MySQL database operations with optimized queries and constraints.",
-            "Improved application usability and overall client-side performance.",
-            "Collaborated using Git & GitHub for version control and peer code reviews."
+            "Designed and developed a serverless full-stack cloud application automating Amazon S3 storage lifecycle management using event-driven backend workflows.",
+            "Built a React-based monitoring dashboard consuming REST APIs for real-time storage analytics and cost optimisation.",
+            "Worked in sprint-based Agile cycles, raising pull requests on GitHub and incorporating code review feedback.",
+            "Deployed the application on AWS and Vercel following cloud security and serverless architecture best practices."
         ]
     }
 ];
@@ -211,103 +217,72 @@ export const internshipData = [
 // Projects - Most Important Showcase Section
 export const projectsData = [
     {
-        id: "airline-management-system",
-        title: "Airline Management System",
-        isFeatured: true,
-        category: "Full Stack",
-        thumbnail: "/airline-mockup.png",
-        shortDescription: "A full-stack airline management platform that allows users to search flights, select seats, book tickets, manage bookings, and allows administrators to manage flights and passengers.",
-        problemSolved: "Automates the manual flight reservation process with transactional booking safety, dynamic seat reservation matrices, and administrative flight scheduling.",
-        keyFeatures: [
-            "User authentication & Google authentication",
-            "Flight search with dynamic filters",
-            "Interactive seat selection matrix",
-            "Booking management & passenger portal",
-            "Admin dashboard for flights & passenger fleets",
-            "Ticket generation & email ticket delivery"
-        ],
-        technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "Tailwind CSS", icon: SiTailwindcss, brandColor: "#06B6D4" },
-            { name: "Node.js", icon: SiNodedotjs, brandColor: "#339933" },
-            { name: "Express.js", icon: SiExpress, brandColor: "#000000" },
-            { name: "MySQL", icon: SiMysql, brandColor: "#4479A1" },
-            { name: "Sequelize", icon: SiSequelize, brandColor: "#52B0E7" },
-            { name: "JWT", icon: SiJsonwebtokens, brandColor: "#D63AFF" },
-            { name: "Firebase", icon: SiFirebase, brandColor: "#FFCA28" }
-        ],
-        githubUrl: "[YOUR_GITHUB_URL]/airline-management-system",
-        liveDemoUrl: "https://airline-management-demo.example.com"
-    },
-    {
-        id: "collaborative-task-manager",
-        title: "Real-Time Team Task & Sprint Hub",
-        isFeatured: false,
-        category: "Full Stack",
-        thumbnail: "/task-mockup.png",
-        shortDescription: "A collaborative Kanban and sprint task management platform engineered for agile development teams with real-time state synchronization.",
-        problemSolved: "Streamlines project task assignment, status updates, and deadline tracking for cross-functional software teams.",
-        keyFeatures: [
-            "Interactive drag-and-drop Kanban workflow boards",
-            "Real-time status updates using WebSockets",
-            "Role-based permission controls (Admin, Member, Viewer)",
-            "Automated activity audit log and task assignment"
-        ],
-        technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "Node.js", icon: SiNodedotjs, brandColor: "#339933" },
-            { name: "Express.js", icon: SiExpress, brandColor: "#000000" },
-            { name: "MongoDB", icon: SiMongodb, brandColor: "#47A248" },
-            { name: "Redis", icon: SiRedis, brandColor: "#DC382D" }
-        ],
-        githubUrl: "[YOUR_GITHUB_URL]/team-task-hub",
-        liveDemoUrl: "https://team-task-hub-demo.example.com"
-    },
-    {
-        id: "e-commerce-api-storefront",
-        title: "E-Commerce Storefront & Order Platform",
-        isFeatured: false,
-        category: "Full Stack",
-        thumbnail: "/ecommerce-mockup.png",
-        shortDescription: "An online storefront featuring product discovery, cart state management, checkout summary, and order tracking.",
-        problemSolved: "Provides a responsive, fast-loading shopping experience with reliable state management and relational product schemas.",
-        keyFeatures: [
-            "Faceted catalog search and category filtering",
-            "Cart state persistence and order summary billing",
-            "Inventory management portal with stock status updates",
-            "Responsive product visualizer"
-        ],
-        technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "JavaScript", icon: SiJavascript, brandColor: "#F7DF1E" },
-            { name: "Node.js", icon: SiNodedotjs, brandColor: "#339933" },
-            { name: "PostgreSQL", icon: SiPostgresql, brandColor: "#4169E1" }
-        ],
-        githubUrl: "[YOUR_GITHUB_URL]/ecommerce-storefront",
-        liveDemoUrl: "https://ecommerce-storefront-demo.example.com"
-    },
-    {
-        id: "developer-code-analyzer",
-        title: "Developer Code Snippet & Review Analyzer",
-        isFeatured: false,
-        category: "Full Stack",
-        thumbnail: "/ai-code-mockup.png",
-        shortDescription: "A developer tool providing syntax highlighting, time complexity heuristic estimation, and snippet storage.",
-        problemSolved: "Helps developers store reusable code snippets, format code snippets, and review algorithm complexity.",
-        keyFeatures: [
-            "Multi-language code syntax visualizer",
-            "Time & space complexity heuristic analysis",
-            "Searchable code snippet repository"
-        ],
-        technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "TypeScript", icon: SiTypescript, brandColor: "#3178C6" },
-            { name: "Node.js", icon: SiNodedotjs, brandColor: "#339933" },
-            { name: "MongoDB", icon: SiMongodb, brandColor: "#47A248" }
-        ],
-        githubUrl: "[YOUR_GITHUB_URL]/code-snippet-analyzer",
-        liveDemoUrl: "https://code-analyzer-demo.example.com"
-    }
+    id: "project-1",
+    title: "AWS S3 Storage Lifecycle Management",
+    description:
+        "Serverless full-stack cloud application that automates Amazon S3 storage lifecycle management using event-driven workflows and provides real-time storage analytics.",
+    technologies: [
+        { name: "AWS Lambda", icon: SiAwslambda, brandColor: "#FF9900" },
+        { name: "EventBridge", icon: SiAmazon, brandColor: "#FF9900" },
+        { name: "CloudTrail", icon: SiAmazon, brandColor: "#FF9900" },
+        { name: "DynamoDB", icon: SiAmazondynamodb, brandColor: "#4053D6" },
+        { name: "API Gateway", icon: SiAmazonapigateway, brandColor: "#FF4F8B" },
+        { name: "Python", icon: SiPython, brandColor: "#3776AB" },
+        { name: "React.js", icon: SiReact, brandColor: "#61DAFB" }
+    ],
+    achievements: [
+        "Automated Amazon S3 storage lifecycle management through event-driven serverless workflows.",
+        "Built a React monitoring dashboard consuming REST APIs for real-time storage analytics and cost optimisation.",
+        "Implemented cloud workflows using AWS Lambda, EventBridge, CloudTrail, DynamoDB, and API Gateway.",
+        "Collaborated in Agile sprints using GitHub pull requests and peer code reviews.",
+        "Deployed the application on AWS and Vercel following serverless architecture and cloud security practices."
+    ],
+    duration: "February 2026 – April 2026",
+    liveDemo: "[LIVE DEMO URL]"
+},
+
+{
+    id: "project-2",
+    title: "FindMyShot",
+    description:
+        "AI-powered photo finder that enables users to locate their photos from large image collections using face recognition.",
+    technologies: [
+        { name: "Spring Boot", icon: SiSpringboot, brandColor: "#6DB33F" },
+        { name: "Java", icon: SiOpenjdk, brandColor: "#ED8B00" },
+        { name: "DJL / ONNX Runtime", icon: SiPython, brandColor: "#3776AB" },
+        { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
+        { name: "MongoDB", icon: SiMongodb, brandColor: "#47A248" },
+        { name: "Cloudinary", icon: SiCloudinary, brandColor: "#3448C5" }
+    ],
+    achievements: [
+        "Built a full-stack AI-powered application for locating user photos from large albums using face recognition.",
+        "Engineered REST APIs with Spring Boot and Java with asynchronous processing for scalable image operations.",
+        "Developed a React.js frontend and integrated Cloudinary CDN for scalable image storage and retrieval.",
+        "Integrated DJL and ONNX Runtime for AI-based face recognition workflows."
+    ],
+    liveDemo: "[LIVE DEMO URL]"
+},
+
+{
+    id: "project-3",
+    title: "HackNest",
+    description:
+        "Full-stack hackathon team formation and collaboration platform for discovering hackathons, building teams, and recruiting members.",
+    duration: "May 2026 – July 2026",
+    technologies: [
+        { name: "Spring Boot", icon: SiSpringboot, brandColor: "#6DB33F" },
+        { name: "MongoDB", icon: SiMongodb, brandColor: "#47A248" },
+        { name: "JWT", icon: SiJsonwebtokens, brandColor: "#000000" },
+        { name: "React.js", icon: SiReact, brandColor: "#61DAFB" }
+    ],
+    achievements: [
+        "Developed a full-stack platform for discovering hackathons, forming teams, and recruiting members.",
+        "Built REST APIs using Spring Boot and MongoDB with JWT-based authentication.",
+        "Developed a responsive React.js frontend with search, recommendations, applications, and invitations.",
+        "Implemented ratings and analytics features to improve team discovery and collaboration."
+    ],
+    liveDemo: "[LIVE DEMO URL]"
+}
 ];
 
 // Skills / Visual Tech Stack (Grouped Categories with Simple Icons)

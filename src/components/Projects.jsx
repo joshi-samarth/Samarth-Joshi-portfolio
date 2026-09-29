@@ -35,53 +35,61 @@ const Projects = () => {
                                 </div>
 
                                 <div className="flex items-center gap-3">
-                                    <a
-                                        href={featuredProject.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn-secondary"
-                                    >
-                                        GitHub
-                                    </a>
-                                    <a
-                                        href={featuredProject.liveDemoUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn-primary"
-                                    >
-                                        Live Demo
-                                    </a>
+                                    {(featuredProject.githubUrl || featuredProject.github) && (
+                                        <a
+                                            href={featuredProject.githubUrl || featuredProject.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-secondary"
+                                        >
+                                            GitHub
+                                        </a>
+                                    )}
+                                    {(featuredProject.liveDemoUrl || featuredProject.liveDemo) && (
+                                        <a
+                                            href={featuredProject.liveDemoUrl || featuredProject.liveDemo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn-primary"
+                                        >
+                                            Live Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
 
                             <p className="text-base text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
-                                {featuredProject.shortDescription}
+                                {featuredProject.shortDescription || featuredProject.description}
                             </p>
 
                             {/* Features Grid */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                                <div className="space-y-2">
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5]">
-                                        Problem Solved
-                                    </p>
-                                    <p className="text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
-                                        {featuredProject.problemSolved}
-                                    </p>
-                                </div>
+                                {featuredProject.problemSolved && (
+                                    <div className="space-y-2">
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5]">
+                                            Problem Solved
+                                        </p>
+                                        <p className="text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                                            {featuredProject.problemSolved}
+                                        </p>
+                                    </div>
+                                )}
 
-                                <div className="space-y-2">
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5]">
-                                        Key Features
-                                    </p>
-                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                                        {featuredProject.keyFeatures.map((feat, fIdx) => (
-                                            <li key={fIdx} className="text-xs text-[#666666] dark:text-[#A3A3A3] flex items-start gap-2">
-                                                <span className="text-[#2563EB] dark:text-[#60A5FA] font-bold">•</span>
-                                                <span>{feat}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                {((featuredProject.keyFeatures && featuredProject.keyFeatures.length > 0) || (featuredProject.achievements && featuredProject.achievements.length > 0)) && (
+                                    <div className="space-y-2">
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5]">
+                                            {featuredProject.keyFeatures ? "Key Features" : "Key Achievements"}
+                                        </p>
+                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                                            {(featuredProject.keyFeatures || featuredProject.achievements || []).map((feat, fIdx) => (
+                                                <li key={fIdx} className="text-xs text-[#666666] dark:text-[#A3A3A3] flex items-start gap-2">
+                                                    <span className="text-[#2563EB] dark:text-[#60A5FA] font-bold">•</span>
+                                                    <span>{feat}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Tech Stack Simple Icons */}
