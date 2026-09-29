@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: #FAFAF8;
+        color: #171717;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .dark body {
+        background-color: #111111;
+        color: #F5F5F5;
+    }
+}
+
+/* Restrained Minimal Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D4D4D4;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+/* Button Base Utilities */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: #2563EB;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 200ms ease;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.dark .btn-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.dark .btn-primary:hover {
+    background-color: #1D4ED8;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: #171717;
+    border: 1px solid #D4D4D4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.btn-secondary:hover {
+    border-color: #171717;
+    background-color: #F3F4F1;
+}
+
+.dark .btn-secondary {
+    color: #F5F5F5;
+    border-color: #333333;
+}
+
+.dark .btn-secondary:hover {
+    border-color: #A3A3A3;
+    background-color: #181818;
+}
+
+/* Card Styling */
+.card-clean {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.card-clean:hover {
+    border-color: #D4D4D4;
+}
+
+.dark .card-clean {
+    background-color: #1C1C1C;
+    border-color: #2A2A2A;
+    box-shadow: none;
+}
+
+.dark .card-clean:hover {
+    border-color: #383838;
+}
+
+/* Section Header Typography */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #171717;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 640px) {
+    .section-title {
+        font-size: 26px;
+    }
+}
+
+.dark .section-title {
+    color: #F5F5F5;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #2563EB;
+}
+
+.dark .section-subtitle {
+    color: #60A5FA;
+}
