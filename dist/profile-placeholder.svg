@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#avatarGrad)"/>
+  <circle cx="200" cy="150" r="65" fill="#475569" stroke="url(#accentGrad)" stroke-width="4"/>
+  <path d="M100 330 C100 245, 140 230, 200 230 C260 230, 300 245, 300 330 Z" fill="#475569" stroke="url(#accentGrad)" stroke-width="4"/>
+  <!-- Developer icon badge -->
+  <circle cx="280" cy="270" r="28" fill="#1e293b" stroke="#3b82f6" stroke-width="3"/>
+  <text x="280" y="277" font-family="monospace" font-size="18" font-weight="bold" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+  <text x="200" y="375" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#94a3b8" text-anchor="middle">Software Developer</text>
+</svg>

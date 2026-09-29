@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { educationData } from '../data/data';
 
 const EducationTimeline = () => {
@@ -10,18 +11,37 @@ const EducationTimeline = () => {
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
-                <div className="max-w-2xl mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.3 }}
+                    className="max-w-2xl mb-12"
+                >
                     <p className="section-subtitle mb-1">Academic Background</p>
                     <h2 className="section-title">Education</h2>
-                </div>
+                </motion.div>
 
                 {/* Vertical Timeline */}
                 <div className="relative pl-6 sm:pl-8 border-l border-[#D4D4D4] dark:border-[#2A2A2A] space-y-10 ml-2 sm:ml-4">
-                    {educationData.map((item) => (
-                        <div key={item.id} className="relative group">
+                    {educationData.map((item, index) => (
+                        <motion.div
+                            key={item.id + index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-40px" }}
+                            transition={{ duration: 0.35, delay: index * 0.1 }}
+                            className="relative group"
+                        >
                             
-                            {/* 10-12px Timeline Blue Node */}
-                            <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-[#2563EB] dark:bg-[#60A5FA]" />
+                            {/* Animated 10-12px Timeline Blue Node */}
+                            <motion.div
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.25, delay: index * 0.1 + 0.1 }}
+                                className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-[#2563EB] dark:bg-[#60A5FA]"
+                            />
 
                             {/* Timeline Card */}
                             <div className="card-clean p-6 space-y-3">
@@ -65,7 +85,7 @@ const EducationTimeline = () => {
                                 )}
                             </div>
 
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
