@@ -58,14 +58,14 @@ export const personalInfo = {
     email: "Samarthjoshi.pict@gmail.com",
     phone: "9356804972",
     location: "Pune, Maharashtra, INDIA",
-    profileImage: "https://drive.google.com/file/d/1LaO_8vdGRnaX0QNXF0NhWnI_AMfTZmOl/view?usp=sharing",
+    profileImage: "/Profile.png",
     resumeUrl: "https://drive.google.com/file/d/1NYCDJkZt13BAg6sArdT6Thi7GvmLVwT6/view?usp=sharing",
 
     // Coding & Professional Profiles
     profiles: {
         github: {
             name: "GitHub",
-            url: "[YOUR_GITHUB_URL]",
+            url: "https://github.com/joshi-samarth",
             username: "@github-handle",
             icon: SiGithub,
             description: "Open source repositories, personal projects, and active code commits",
@@ -74,7 +74,7 @@ export const personalInfo = {
         },
         linkedin: {
             name: "LinkedIn",
-            url: "[YOUR_LINKEDIN_URL]",
+            url: "https://www.linkedin.com/in/joshisamarth/",
             username: "in/linkedin-profile",
             icon: SiLinkedin,
             description: "Professional network, work experience, and recommendations",
@@ -83,7 +83,7 @@ export const personalInfo = {
         },
         leetcode: {
             name: "LeetCode",
-            url: "[YOUR_LEETCODE_URL]",
+            url: "https://leetcode.com/u/Samarth_Vishnu_Joshi/",
             username: "leetcode.com/user",
             icon: SiLeetcode,
             description: "Data structures, algorithmic problem solving, and contest ratings",
@@ -92,22 +92,22 @@ export const personalInfo = {
         },
         codechef: {
             name: "CodeChef",
-            url: "[YOUR_CODECHEF_URL]",
+            url: "https://www.codechef.com/users/team_craft_80",
             username: "codechef.com/users",
             icon: SiCodechef,
             description: "Competitive programming contests, division rankings, and algorithmic challenges",
             badge: "Competitive Coding",
             brandColor: "#5B4638"
-        },
-        instagram: {
-            name: "Instagram",
-            url: "[YOUR_INSTAGRAM_URL]",
-            username: "@instagram-handle",
-            icon: SiInstagram,
-            description: "Tech community updates, personal projects, and developer highlights",
-            badge: "Social",
-            brandColor: "#E4405F"
         }
+        // instagram: {
+        //     name: "Instagram",
+        //     url: "[YOUR_INSTAGRAM_URL]",
+        //     username: "@instagram-handle",
+        //     icon: SiInstagram,
+        //     description: "Tech community updates, personal projects, and developer highlights",
+        //     badge: "Social",
+        //     brandColor: "#E4405F"
+        // }
     }
 };
 
@@ -145,12 +145,12 @@ export const aboutMe = {
 export const educationData = [
     {
         id: "edu-1",
-        degree: "Bachelor of Engineering / Technology (B.Tech / B.E.)",
-        institution: "[COLLEGE NAME]",
-        branch: "Computer Science and Engineering",
-        duration: "2023 – 2027",
-        score: "CGPA: [CGPA] / 10.0",
-        location: "[COLLEGE CITY, STATE]",
+        degree: "Bachelor of Engineering (B.E.)",
+        institution: "SCTR'S Pune Institute of Computer Technology",
+        branch: "Information Technology",
+        duration: "2024 – 2027",
+        score: "CGPA: 9.51 ",
+        location: "Pune, Maharashtra",
         description: "Pursuing rigorous academic coursework in computer science fundamentals, algorithm design, software development, and systems engineering.",
         highlights: [
             "Relevant Coursework: Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, OOP",
@@ -159,12 +159,24 @@ export const educationData = [
     },
     {
         id: "edu-2",
-        degree: "Higher Secondary Certificate (12th Grade / Pre-University)",
-        institution: "[SCHOOL / JUNIOR COLLEGE NAME]",
-        branch: "Science (Physics, Chemistry, Mathematics & CS)",
-        duration: "2021 – 2023",
-        score: "Percentage: [PERCENTAGE]%",
-        location: "[CITY, STATE]",
+        degree: "Diploma",
+        institution: "Government Polytechnic College Dharashiv",
+        branch: "Computer Engineering",
+        duration: "2021 – 2024",
+        score: "Percentage: 94.34%",
+        location: "Dharashiv, Maharashtra",
+        description: "Completed higher secondary education with strong focus on mathematics, analytical logic, and foundational programming.",
+        highlights: [
+            "Strong foundation in Calculus, Linear Algebra, and Problem Solving"
+        ]
+    },
+    {
+        id: "edu-3",
+        degree: "10th",
+        institution: "Shripatrao Bhosale highschool Dharashiv",
+        duration: "2020 – 2021",
+        score: "Percentage: 95.80%",
+        location: "Dharashiv, Maharashtra",
         description: "Completed higher secondary education with strong focus on mathematics, analytical logic, and foundational programming.",
         highlights: [
             "Strong foundation in Calculus, Linear Algebra, and Problem Solving"
@@ -192,23 +204,6 @@ export const internshipData = [
             "Integrated MySQL database operations with optimized queries and constraints.",
             "Improved application usability and overall client-side performance.",
             "Collaborated using Git & GitHub for version control and peer code reviews."
-        ]
-    },
-    {
-        id: "intern-2",
-        company: "[PREVIOUS STARTUP / COMPANY NAME]",
-        role: "Frontend Developer Intern",
-        duration: "[MONTH YEAR] – [MONTH YEAR]",
-        location: "[CITY / HYBRID]",
-        technologies: [
-            { name: "React.js", icon: SiReact, brandColor: "#61DAFB" },
-            { name: "JavaScript", icon: SiJavascript, brandColor: "#F7DF1E" },
-            { name: "Tailwind CSS", icon: SiTailwindcss, brandColor: "#06B6D4" }
-        ],
-        achievements: [
-            "Engineered reusable UI components and client-side form validations.",
-            "Integrated third-party REST APIs and managed client state efficiently.",
-            "Ensured cross-browser compatibility and responsive layout consistency."
         ]
     }
 ];
