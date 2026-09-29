@@ -58,8 +58,8 @@ export const personalInfo = {
     email: "Samarthjoshi.pict@gmail.com",
     phone: "9356804972",
     location: "Pune, Maharashtra, INDIA",
-    profileImage: "/profile.jpg",
-    resumeUrl: "/resume.pdf",
+    profileImage: "/public/profile.png",
+    resumeUrl: "/public/S24IT023_SamarthJoshi_Resume.pdf",
 
     // Coding & Professional Profiles
     profiles: {
@@ -155,32 +155,6 @@ export const educationData = [
         highlights: [
             "Relevant Coursework: Data Structures & Algorithms, DBMS, Operating Systems, Computer Networks, OOP",
             "Active participant in technical coding clubs and competitive programming contests"
-        ]
-    },
-    {
-        id: "edu-2",
-        degree: "Higher Secondary Certificate (12th Grade / Pre-University)",
-        institution: "[SCHOOL / JUNIOR COLLEGE NAME]",
-        branch: "Science (Physics, Chemistry, Mathematics & CS)",
-        duration: "2021 – 2023",
-        score: "Percentage: [PERCENTAGE]%",
-        location: "[CITY, STATE]",
-        description: "Completed higher secondary education with strong focus on mathematics, analytical logic, and foundational programming.",
-        highlights: [
-            "Strong foundation in Calculus, Linear Algebra, and Problem Solving"
-        ]
-    },
-    {
-        id: "edu-2",
-        degree: "Higher Secondary Certificate (12th Grade / Pre-University)",
-        institution: "[SCHOOL / JUNIOR COLLEGE NAME]",
-        branch: "Science (Physics, Chemistry, Mathematics & CS)",
-        duration: "2021 – 2023",
-        score: "Percentage: [PERCENTAGE]%",
-        location: "[CITY, STATE]",
-        description: "Completed higher secondary education with strong focus on mathematics, analytical logic, and foundational programming.",
-        highlights: [
-            "Strong foundation in Calculus, Linear Algebra, and Problem Solving"
         ]
     },
     {
