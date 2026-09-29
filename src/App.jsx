@@ -14,7 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     return (
-        <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/20 selection:text-primary">
+        <div className="min-h-screen bg-[#F6F0E8] dark:bg-[#292124] text-[#252222] dark:text-[#F6F0E8] antialiased selection:bg-[#8F3D45]/20 selection:text-[#8F3D45]">
             {/* Sticky Navigation Header */}
             <Header />
 
@@ -35,7 +35,7 @@ function App() {
                 {/* 5. Projects - Most Important Showcase */}
                 <Projects />
 
-                {/* 6. Skills - Visual Tech Stack with Tooltips */}
+                {/* 6. Skills - Visual Tech Stack */}
                 <Skills />
 
                 {/* 7. Core CS Fundamentals */}

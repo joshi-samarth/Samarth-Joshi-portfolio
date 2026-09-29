@@ -7,7 +7,7 @@ const Loading = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+        }, 1500);
 
         return () => clearTimeout(timer);
     }, []);
@@ -19,29 +19,29 @@ const Loading = () => {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-dark-bg"
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-[#F6F0E8] dark:bg-[#292124]"
                 >
                     <div className="text-center">
                         <motion.div
                             animate={{
-                                scale: [1, 1.2, 1],
+                                scale: [1, 1.1, 1],
                                 rotate: [0, 180, 360]
                             }}
                             transition={{
-                                duration: 2,
+                                duration: 1.8,
                                 repeat: Infinity,
                                 ease: 'easeInOut'
                             }}
-                            className="w-20 h-20 mx-auto mb-8"
+                            className="w-16 h-16 mx-auto mb-6"
                         >
-                            <div className="w-full h-full border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                            <div className="w-full h-full border-4 border-[#8F3D45] border-t-transparent rounded-full animate-spin" />
                         </motion.div>
 
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                            className="text-xl font-bold text-[#8F3D45] tracking-wide"
                         >
                             Loading Portfolio...
                         </motion.h2>

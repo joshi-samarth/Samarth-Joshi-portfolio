@@ -5,7 +5,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="py-20 bg-[#F3F4F1] dark:bg-[#181818] border-t border-[#E5E5E0] dark:border-[#2A2A2A]"
+            className="py-20 bg-[#F6F0E8] dark:bg-[#292124] border-t border-[#DDD2C8] dark:border-[#42363A]"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -23,10 +23,11 @@ const Skills = () => {
                             className="card-clean p-6 flex flex-col justify-between space-y-4"
                         >
                             <div>
-                                <h3 className="text-lg font-bold text-[#171717] dark:text-[#F5F5F5] mb-1">
-                                    {category.title}
+                                <h3 className="text-lg font-bold text-[#252222] dark:text-[#F6F0E8] mb-1 flex items-center gap-2">
+                                    <span className="w-1.5 h-4 bg-[#8F3D45] rounded-full"></span>
+                                    <span>{category.title}</span>
                                 </h3>
-                                <p className="text-xs text-[#666666] dark:text-[#A3A3A3] mb-4">
+                                <p className="text-xs text-[#756D69] dark:text-[#DDD2C8] mb-4">
                                     {category.description}
                                 </p>
 
@@ -36,10 +37,10 @@ const Skills = () => {
                                         return (
                                             <div
                                                 key={item.name}
-                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FAFAF8] dark:bg-[#111111] border border-[#E5E5E0] dark:border-[#2A2A2A]"
+                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#F6F0E8] dark:bg-[#231B1E] border border-[#DDD2C8] dark:border-[#42363A] hover:border-[#8F3D45] dark:hover:border-[#8F3D45] transition-colors"
                                             >
-                                                <Icon className="w-5 h-5 flex-shrink-0" style={{ color: item.brandColor }} />
-                                                <span className="text-xs font-medium text-[#171717] dark:text-[#F5F5F5] truncate">
+                                                {Icon && <Icon className="w-5 h-5 flex-shrink-0" style={{ color: item.brandColor }} />}
+                                                <span className="text-xs font-medium text-[#252222] dark:text-[#F6F0E8] truncate">
                                                     {item.name}
                                                 </span>
                                             </div>

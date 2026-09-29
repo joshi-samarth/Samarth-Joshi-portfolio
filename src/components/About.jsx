@@ -5,7 +5,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="py-20 bg-[#F3F4F1] dark:bg-[#181818] border-t border-[#E5E5E0] dark:border-[#2A2A2A]"
+            className="py-20 bg-[#F6F0E8] dark:bg-[#292124] border-t border-[#DDD2C8] dark:border-[#42363A]"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -20,13 +20,13 @@ const About = () => {
                     
                     {/* Summary */}
                     <div className="lg:col-span-5 card-clean p-6 sm:p-8 space-y-4">
-                        <h3 className="text-lg font-bold text-[#171717] dark:text-[#F5F5F5]">
+                        <h3 className="text-lg font-bold text-[#252222] dark:text-[#F6F0E8]">
                             Developer Mindset
                         </h3>
-                        <p className="text-base text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                        <p className="text-base text-[#756D69] dark:text-[#DDD2C8] leading-relaxed">
                             {aboutMe.summary}
                         </p>
-                        <p className="text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                        <p className="text-sm text-[#756D69] dark:text-[#DDD2C8] leading-relaxed">
                             I am focused on writing readable, testable code with clean separation of concerns and optimized algorithmic performance.
                         </p>
                     </div>
@@ -38,10 +38,11 @@ const About = () => {
                                 key={pillar.title}
                                 className="card-clean p-5 space-y-2"
                             >
-                                <h4 className="text-base font-bold text-[#171717] dark:text-[#F5F5F5]">
-                                    {pillar.title}
+                                <h4 className="text-base font-bold text-[#252222] dark:text-[#F6F0E8] flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#8F3D45]"></span>
+                                    <span>{pillar.title}</span>
                                 </h4>
-                                <p className="text-xs sm:text-sm text-[#666666] dark:text-[#A3A3A3] leading-relaxed">
+                                <p className="text-xs sm:text-sm text-[#756D69] dark:text-[#DDD2C8] leading-relaxed">
                                     {pillar.desc}
                                 </p>
                             </div>

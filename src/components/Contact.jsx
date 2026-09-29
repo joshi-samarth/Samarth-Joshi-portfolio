@@ -58,15 +58,19 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="py-20 bg-[#FAFAF8] dark:bg-[#111111] border-t border-[#E5E5E0] dark:border-[#2A2A2A]"
+            className="py-20 bg-[#292124] text-[#F6F0E8] border-t border-[#42363A]"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
                 <div className="max-w-2xl mb-12">
-                    <p className="section-subtitle mb-1">Get In Touch</p>
-                    <h2 className="section-title">Let's Connect</h2>
-                    <p className="mt-2 text-base text-[#666666] dark:text-[#A3A3A3]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#DDD2C8] mb-1">
+                        Get In Touch
+                    </p>
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F6F0E8] tracking-tight">
+                        Let's Connect
+                    </h2>
+                    <p className="mt-2 text-base text-[#DDD2C8]">
                         I'm always open to discussing software development, internship opportunities, projects, and new opportunities.
                     </p>
                 </div>
@@ -75,46 +79,50 @@ const Contact = () => {
                     
                     {/* Left: Contact Info */}
                     <div className="lg:col-span-5 space-y-6">
-                        <div className="card-clean p-6 sm:p-8 space-y-6">
-                            <h3 className="text-lg font-bold text-[#171717] dark:text-[#F5F5F5]">
+                        <div className="bg-[#32282B] border border-[#42363A] rounded-xl p-6 sm:p-8 space-y-6 shadow-subtle">
+                            <h3 className="text-lg font-bold text-[#F6F0E8]">
                                 Contact Details
                             </h3>
 
-                            <div className="space-y-4 text-sm text-[#666666] dark:text-[#A3A3A3]">
+                            <div className="space-y-5 text-sm text-[#DDD2C8]">
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#F6F0E8] mb-0.5">
                                         Email
                                     </p>
-                                    <a href={`mailto:${personalInfo.email}`} className="text-[#2563EB] dark:text-[#60A5FA] font-medium hover:underline">
+                                    <a href={`mailto:${personalInfo.email}`} className="text-[#F6F0E8] font-medium hover:text-[#8F3D45] transition-colors">
                                         {personalInfo.email}
                                     </a>
                                 </div>
 
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#F6F0E8] mb-0.5">
                                         Phone
                                     </p>
-                                    <p className="text-[#171717] dark:text-[#F5F5F5] font-medium">
+                                    <p className="text-[#F6F0E8] font-medium">
                                         {personalInfo.phone}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#171717] dark:text-[#F5F5F5] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#F6F0E8] mb-0.5">
                                         Location
                                     </p>
-                                    <p className="text-[#171717] dark:text-[#F5F5F5] font-medium">
+                                    <p className="text-[#F6F0E8] font-medium">
                                         {personalInfo.location}
                                     </p>
                                 </div>
 
-                                <div className="pt-2 flex items-center gap-4 text-xs font-medium">
-                                    <a href={personalInfo.profiles.linkedin.url} target="_blank" rel="noopener noreferrer" className="text-[#2563EB] dark:text-[#60A5FA] hover:underline">
-                                        LinkedIn Profile →
-                                    </a>
-                                    <a href={personalInfo.profiles.github.url} target="_blank" rel="noopener noreferrer" className="text-[#2563EB] dark:text-[#60A5FA] hover:underline">
-                                        GitHub Repositories →
-                                    </a>
+                                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold">
+                                    {personalInfo.profiles?.linkedin?.url && (
+                                        <a href={personalInfo.profiles.linkedin.url} target="_blank" rel="noopener noreferrer" className="text-[#F6F0E8] hover:text-[#8F3D45] transition-colors">
+                                            LinkedIn Profile →
+                                        </a>
+                                    )}
+                                    {personalInfo.profiles?.github?.url && (
+                                        <a href={personalInfo.profiles.github.url} target="_blank" rel="noopener noreferrer" className="text-[#F6F0E8] hover:text-[#8F3D45] transition-colors">
+                                            GitHub Repositories →
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -122,13 +130,13 @@ const Contact = () => {
 
                     {/* Right: Contact Form */}
                     <div className="lg:col-span-7">
-                        <div className="card-clean p-6 sm:p-8">
-                            <h3 className="text-lg font-bold text-[#171717] dark:text-[#F5F5F5] mb-6">
+                        <div className="bg-[#32282B] border border-[#42363A] rounded-xl p-6 sm:p-8 shadow-subtle">
+                            <h3 className="text-lg font-bold text-[#F6F0E8] mb-6">
                                 Send a Message
                             </h3>
 
                             {isSubmitted && (
-                                <div className="mb-6 p-4 rounded-lg bg-[#15803D]/10 border border-[#15803D]/30 text-[#15803D] dark:text-emerald-400 text-sm font-medium">
+                                <div className="mb-6 p-4 rounded-lg bg-[#8F3D45]/20 border border-[#8F3D45]/40 text-[#F6F0E8] text-sm font-medium">
                                     Message sent successfully. Thank you for reaching out!
                                 </div>
                             )}
@@ -136,7 +144,7 @@ const Contact = () => {
                             <form onSubmit={handleSubmit} noValidate className="space-y-4">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="name" className="block text-xs font-semibold text-[#171717] dark:text-[#F5F5F5] uppercase mb-1">
+                                        <label htmlFor="name" className="block text-xs font-semibold text-[#F6F0E8] uppercase mb-1">
                                             Name *
                                         </label>
                                         <input
@@ -146,13 +154,13 @@ const Contact = () => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="Your Name"
-                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAFAF8] dark:bg-[#111111] border border-[#E5E5E0] dark:border-[#2A2A2A] text-sm text-[#171717] dark:text-[#F5F5F5] focus:outline-none focus:border-[#2563EB]"
+                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#F6F0E8] placeholder-[#756D69] focus:outline-none focus:border-[#8F3D45]"
                                         />
-                                        {errors.name && <p className="mt-1 text-xs text-[#DC2626]">{errors.name}</p>}
+                                        {errors.name && <p className="mt-1 text-xs text-[#E57373]">{errors.name}</p>}
                                     </div>
 
                                     <div>
-                                        <label htmlFor="email" className="block text-xs font-semibold text-[#171717] dark:text-[#F5F5F5] uppercase mb-1">
+                                        <label htmlFor="email" className="block text-xs font-semibold text-[#F6F0E8] uppercase mb-1">
                                             Email *
                                         </label>
                                         <input
@@ -162,14 +170,14 @@ const Contact = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="your.email@example.com"
-                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAFAF8] dark:bg-[#111111] border border-[#E5E5E0] dark:border-[#2A2A2A] text-sm text-[#171717] dark:text-[#F5F5F5] focus:outline-none focus:border-[#2563EB]"
+                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#F6F0E8] placeholder-[#756D69] focus:outline-none focus:border-[#8F3D45]"
                                         />
-                                        {errors.email && <p className="mt-1 text-xs text-[#DC2626]">{errors.email}</p>}
+                                        {errors.email && <p className="mt-1 text-xs text-[#E57373]">{errors.email}</p>}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="subject" className="block text-xs font-semibold text-[#171717] dark:text-[#F5F5F5] uppercase mb-1">
+                                    <label htmlFor="subject" className="block text-xs font-semibold text-[#F6F0E8] uppercase mb-1">
                                         Subject *
                                     </label>
                                     <input
@@ -179,13 +187,13 @@ const Contact = () => {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         placeholder="Software Development Opportunity / Inquiry"
-                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAFAF8] dark:bg-[#111111] border border-[#E5E5E0] dark:border-[#2A2A2A] text-sm text-[#171717] dark:text-[#F5F5F5] focus:outline-none focus:border-[#2563EB]"
+                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#F6F0E8] placeholder-[#756D69] focus:outline-none focus:border-[#8F3D45]"
                                     />
-                                    {errors.subject && <p className="mt-1 text-xs text-[#DC2626]">{errors.subject}</p>}
+                                    {errors.subject && <p className="mt-1 text-xs text-[#E57373]">{errors.subject}</p>}
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-xs font-semibold text-[#171717] dark:text-[#F5F5F5] uppercase mb-1">
+                                    <label htmlFor="message" className="block text-xs font-semibold text-[#F6F0E8] uppercase mb-1">
                                         Message *
                                     </label>
                                     <textarea
@@ -195,9 +203,9 @@ const Contact = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         placeholder="Write your message here..."
-                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAFAF8] dark:bg-[#111111] border border-[#E5E5E0] dark:border-[#2A2A2A] text-sm text-[#171717] dark:text-[#F5F5F5] focus:outline-none focus:border-[#2563EB] resize-none"
+                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#F6F0E8] placeholder-[#756D69] focus:outline-none focus:border-[#8F3D45] resize-none"
                                     />
-                                    {errors.message && <p className="mt-1 text-xs text-[#DC2626]">{errors.message}</p>}
+                                    {errors.message && <p className="mt-1 text-xs text-[#E57373]">{errors.message}</p>}
                                 </div>
 
                                 <button

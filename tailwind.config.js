@@ -8,39 +8,39 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Light theme exact tokens
+                // Burgundy + Beige + Charcoal palette tokens
                 bg: {
-                    DEFAULT: '#FAFAF8',
-                    secondary: '#F3F4F1',
-                    card: '#FFFFFF',
+                    DEFAULT: '#F6F0E8',     // Warm beige / ivory
+                    secondary: '#EFE8DD',   // Slightly deeper beige for cards/containers
+                    card: '#FFFFFF',        // Clean contrast white or light beige
                 },
                 text: {
-                    primary: '#171717',
-                    secondary: '#666666',
+                    primary: '#252222',      // Dark charcoal
+                    secondary: '#756D69',    // Muted warm gray
                 },
                 border: {
-                    DEFAULT: '#E5E5E0',
+                    DEFAULT: '#DDD2C8',      // Soft beige-gray
                 },
                 accent: {
-                    DEFAULT: '#2563EB',
-                    hover: '#1D4ED8',
+                    DEFAULT: '#8F3D45',      // Deep burgundy
+                    hover: '#733039',        // Dark burgundy
                 },
-                // Dark theme exact tokens
                 dark: {
-                    bg: '#111111',
-                    secondary: '#181818',
-                    card: '#1C1C1C',
-                    text: '#F5F5F5',
-                    muted: '#A3A3A3',
-                    border: '#2A2A2A',
-                    accent: '#60A5FA',
+                    bg: '#292124',           // Charcoal with subtle burgundy undertone
+                    secondary: '#231B1E',    // Darker section variant
+                    card: '#32282B',         // Dark section card
+                    text: '#F6F0E8',         // Light warm beige text
+                    muted: '#DDD2C8',        // Secondary text in dark sections
+                    border: '#42363A',       // Dark section border
+                    accent: '#8F3D45',       // Burgundy accent
+                    accentHover: '#733039',
                 }
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-                subtle: '0 4px 16px rgba(0, 0, 0, 0.04)',
+                subtle: '0 4px 16px rgba(37, 34, 34, 0.04)',
             },
             borderRadius: {
                 button: '8px',

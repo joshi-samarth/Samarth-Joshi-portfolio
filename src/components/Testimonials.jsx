@@ -8,6 +8,8 @@ const Testimonials = () => {
     const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    if (!testimonials || testimonials.length === 0) return null;
+
     const nextTestimonial = () => {
         setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     };
@@ -43,23 +45,20 @@ const Testimonials = () => {
         <section
             id="testimonials"
             ref={ref}
-            className="section-padding bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10"
+            className="py-20 bg-[#F6F0E8] dark:bg-[#292124] border-t border-[#DDD2C8] dark:border-[#42363A]"
         >
-            <div className="container-custom">
+            <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate={isIntersecting ? "visible" : "hidden"}
                 >
                     {/* Section Header */}
-                    <motion.div variants={itemVariants} className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                            Client <span className="text-primary">Testimonials</span>
+                    <motion.div variants={itemVariants} className="text-left mb-16 max-w-2xl">
+                        <p className="section-subtitle mb-1">Feedback</p>
+                        <h2 className="section-title">
+                            Testimonials
                         </h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-4" />
-                        <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
-                            What people say about working with me
-                        </p>
                     </motion.div>
 
                     {/* Testimonial Slider */}
@@ -70,60 +69,60 @@ const Testimonials = () => {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
-                                initial={{ opacity: 0, x: 100 }}
+                                initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -100 }}
+                                exit={{ opacity: 0, x: -50 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-white dark:bg-dark-card rounded-2xl shadow-2xl p-8 md:p-12"
+                                className="card-clean p-8 md:p-12 space-y-6"
                             >
                                 {/* Quote Icon */}
-                                <div className="flex justify-center mb-6">
-                                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                                        <FaQuoteLeft className="text-primary text-2xl" />
+                                <div className="flex justify-start">
+                                    <div className="w-12 h-12 bg-[#8F3D45]/10 rounded-full flex items-center justify-center">
+                                        <FaQuoteLeft className="text-[#8F3D45] text-xl" />
                                     </div>
                                 </div>
 
                                 {/* Testimonial Text */}
-                                <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl text-center mb-8 leading-relaxed italic">
+                                <p className="text-[#756D69] dark:text-[#DDD2C8] text-base md:text-lg leading-relaxed italic">
                                     "{testimonials[currentIndex].text}"
                                 </p>
 
                                 {/* Author Info */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-primary/20">
+                                <div className="flex items-center gap-4 pt-4 border-t border-[#DDD2C8] dark:border-[#42363A]">
+                                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#8F3D45]">
                                         <img
                                             src={testimonials[currentIndex].image}
                                             alt={testimonials[currentIndex].name}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {
-                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=3b82f6&color=fff&size=200`;
+                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=8F3D45&color=F6F0E8&size=200`;
                                             }}
                                         />
                                     </div>
-                                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                                        {testimonials[currentIndex].name}
-                                    </h4>
-                                    <p className="text-primary font-medium mb-1">
-                                        {testimonials[currentIndex].role}
-                                    </p>
-                                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                                        {testimonials[currentIndex].company}
-                                    </p>
+                                    <div>
+                                        <h4 className="text-base font-bold text-[#252222] dark:text-[#F6F0E8]">
+                                            {testimonials[currentIndex].name}
+                                        </h4>
+                                        <p className="text-xs font-semibold text-[#8F3D45]">
+                                            {testimonials[currentIndex].role}
+                                        </p>
+                                        <p className="text-xs text-[#756D69] dark:text-[#DDD2C8]">
+                                            {testimonials[currentIndex].company}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         </AnimatePresence>
 
                         {/* Navigation Buttons */}
                         <div className="flex justify-center items-center gap-4 mt-8">
-                            <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
+                            <button
                                 onClick={prevTestimonial}
-                                className="w-12 h-12 bg-white dark:bg-dark-card rounded-full shadow-lg flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary hover:shadow-xl transition-all"
+                                className="w-10 h-10 rounded-full border border-[#DDD2C8] dark:border-[#42363A] bg-white dark:bg-[#32282B] flex items-center justify-center text-[#252222] dark:text-[#F6F0E8] hover:border-[#8F3D45] hover:text-[#8F3D45] transition-colors"
                                 aria-label="Previous testimonial"
                             >
                                 <FaChevronLeft />
-                            </motion.button>
+                            </button>
 
                             {/* Dots Indicator */}
                             <div className="flex gap-2">
@@ -131,30 +130,24 @@ const Testimonials = () => {
                                     <button
                                         key={index}
                                         onClick={() => goToTestimonial(index)}
-                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                                ? 'bg-primary w-8'
-                                                : 'bg-gray-300 dark:bg-gray-600 hover:bg-primary/50'
+                                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
+                                                ? 'bg-[#8F3D45] w-6'
+                                                : 'bg-[#DDD2C8] dark:bg-[#42363A] hover:bg-[#8F3D45]/50'
                                             }`}
                                         aria-label={`Go to testimonial ${index + 1}`}
                                     />
                                 ))}
                             </div>
 
-                            <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
+                            <button
                                 onClick={nextTestimonial}
-                                className="w-12 h-12 bg-white dark:bg-dark-card rounded-full shadow-lg flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-primary hover:shadow-xl transition-all"
+                                className="w-10 h-10 rounded-full border border-[#DDD2C8] dark:border-[#42363A] bg-white dark:bg-[#32282B] flex items-center justify-center text-[#252222] dark:text-[#F6F0E8] hover:border-[#8F3D45] hover:text-[#8F3D45] transition-colors"
                                 aria-label="Next testimonial"
                             >
                                 <FaChevronRight />
-                            </motion.button>
+                            </button>
                         </div>
 
-                        {/* Counter */}
-                        <div className="text-center mt-6 text-gray-600 dark:text-gray-400">
-                            <span className="font-semibold text-primary">{currentIndex + 1}</span> / {testimonials.length}
-                        </div>
                     </motion.div>
                 </motion.div>
             </div>

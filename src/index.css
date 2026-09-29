@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,15 +11,15 @@
 
     body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background-color: #FAFAF8;
-        color: #171717;
+        background-color: #F6F0E8;
+        color: #252222;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     .dark body {
-        background-color: #111111;
-        color: #F5F5F5;
+        background-color: #292124;
+        color: #F6F0E8;
     }
 }
 
@@ -34,12 +34,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D4D4D4;
+    background: #DDD2C8;
     border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-    background: #333333;
+    background: #42363A;
 }
 
 /* Button Base Utilities */
@@ -48,26 +48,30 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 18px;
-    background-color: #2563EB;
-    color: #FFFFFF;
+    padding: 10px 20px;
+    background-color: #8F3D45;
+    color: #F6F0E8;
+    border: 1px solid #8F3D45;
     font-size: 14px;
     font-weight: 500;
     border-radius: 8px;
-    transition: background-color 200ms ease;
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
 }
 
 .btn-primary:hover {
-    background-color: #1D4ED8;
+    background-color: #733039;
+    border-color: #733039;
 }
 
 .dark .btn-primary {
-    background-color: #2563EB;
-    color: #FFFFFF;
+    background-color: #8F3D45;
+    color: #F6F0E8;
+    border-color: #8F3D45;
 }
 
 .dark .btn-primary:hover {
-    background-color: #1D4ED8;
+    background-color: #733039;
+    border-color: #733039;
 }
 
 .btn-secondary {
@@ -75,59 +79,64 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 10px 20px;
     background-color: transparent;
-    color: #171717;
-    border: 1px solid #D4D4D4;
+    color: #8F3D45;
+    border: 1px solid #8F3D45;
     font-size: 14px;
     font-weight: 500;
     border-radius: 8px;
-    transition: border-color 200ms ease, background-color 200ms ease;
+    transition: border-color 200ms ease, background-color 200ms ease, color 200ms ease;
 }
 
 .btn-secondary:hover {
-    border-color: #171717;
-    background-color: #F3F4F1;
+    border-color: #8F3D45;
+    background-color: #8F3D45;
+    color: #F6F0E8;
 }
 
 .dark .btn-secondary {
-    color: #F5F5F5;
-    border-color: #333333;
+    color: #F6F0E8;
+    border-color: #DDD2C8;
 }
 
 .dark .btn-secondary:hover {
-    border-color: #A3A3A3;
-    background-color: #181818;
+    border-color: #8F3D45;
+    background-color: #8F3D45;
+    color: #F6F0E8;
 }
 
 /* Card Styling */
 .card-clean {
     background-color: #FFFFFF;
-    border: 1px solid #E5E5E0;
+    border: 1px solid #DDD2C8;
     border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    transition: transform 200ms ease, border-color 200ms ease;
+    box-shadow: 0 4px 16px rgba(37, 34, 34, 0.03);
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .card-clean:hover {
-    border-color: #D4D4D4;
+    transform: translateY(-3px);
+    border-color: #8F3D45;
+    box-shadow: 0 8px 24px rgba(143, 61, 69, 0.08);
 }
 
 .dark .card-clean {
-    background-color: #1C1C1C;
-    border-color: #2A2A2A;
+    background-color: #32282B;
+    border-color: #42363A;
     box-shadow: none;
 }
 
 .dark .card-clean:hover {
-    border-color: #383838;
+    transform: translateY(-3px);
+    border-color: #8F3D45;
 }
 
 /* Section Header Typography */
 .section-title {
     font-size: 32px;
     font-weight: 700;
-    color: #171717;
+    color: #252222;
     letter-spacing: -0.02em;
 }
 
@@ -138,7 +147,7 @@
 }
 
 .dark .section-title {
-    color: #F5F5F5;
+    color: #F6F0E8;
 }
 
 .section-subtitle {
@@ -146,9 +155,9 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #2563EB;
+    color: #8F3D45;
 }
 
 .dark .section-subtitle {
-    color: #60A5FA;
+    color: #DDD2C8;
 }
