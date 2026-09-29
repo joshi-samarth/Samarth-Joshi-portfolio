@@ -58,7 +58,7 @@ export const personalInfo = {
     email: "Samarthjoshi.pict@gmail.com",
     phone: "9356804972",
     location: "Pune, Maharashtra, INDIA",
-    profileImage: "https://drive.google.com/file/d/1LaO_8vdGRnaX0QNXF0NhWnI_AMfTZmOl/view?usp=sharing",
+    profileImage: "public/Profile.png",
     resumeUrl: "https://drive.google.com/file/d/1NYCDJkZt13BAg6sArdT6Thi7GvmLVwT6/view?usp=sharing",
 
     // Coding & Professional Profiles
