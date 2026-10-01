@@ -8,39 +8,53 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Finalized Color Palette
+                // Monochrome Palette: #000000, #333333, #666666, #999999, #CCCCCC
+                palette: {
+                    black: '#000000',
+                    charcoal: '#333333',
+                    midgrey: '#666666',
+                    lightgrey: '#999999',
+                    silver: '#CCCCCC',
+                },
                 bg: {
-                    DEFAULT: '#FFFFFF',     // Main background
-                    secondary: '#F0F0F0',   // Secondary background for section separation
-                    card: '#FFFFFF',        // Card background
+                    DEFAULT: '#FFFFFF',     // Main background (Light)
+                    secondary: '#FAFAFA',   // Secondary light section background
+                    card: '#FFFFFF',        // Light card background
                 },
                 text: {
-                    primary: '#333333',      // Primary text / charcoal
-                    secondary: '#707070',    // Secondary text / gray
+                    primary: '#000000',      // Light primary text
+                    secondary: '#666666',    // Light secondary text
+                    muted: '#999999',        // Light muted text
                 },
                 border: {
-                    DEFAULT: '#D9D9D9',      // Subtle border
+                    DEFAULT: '#CCCCCC',      // Light border
+                    dark: '#333333',        // Dark border
                 },
                 accent: {
-                    DEFAULT: '#8F3D45',      // Signature burgundy accent
-                    hover: '#733039',        // Burgundy hover
+                    DEFAULT: '#000000',      // Signature black accent (Light mode)
+                    hover: '#333333',        // Black hover
                 },
                 dark: {
-                    bg: '#292124',           // Dark section background
-                    secondary: '#231B1E',    // Secondary dark container
-                    card: '#32282B',         // Dark section card background
+                    bg: '#000000',           // Dark mode background (#000000)
+                    secondary: '#121212',    // Dark secondary background
+                    card: '#1A1A1A',         // Dark section card background
+                    cardHover: '#262626',    // Dark card hover
                     text: '#FFFFFF',         // Light text in dark sections
-                    muted: '#D9D9D9',        // Muted text in dark sections
-                    border: '#42363A',       // Dark section border
-                    accent: '#8F3D45',       // Burgundy accent
-                    accentHover: '#733039',
+                    muted: '#999999',        // Muted text in dark sections
+                    silver: '#CCCCCC',       // Silver text/details in dark sections
+                    border: '#333333',       // Dark section border
+                    borderHover: '#666666',  // Dark border hover
+                    accent: '#FFFFFF',       // Crisp white accent in dark mode
+                    accentHover: '#CCCCCC',  // White hover in dark mode
                 }
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-                subtle: '0 2px 10px rgba(0, 0, 0, 0.04)',
+                subtle: '0 2px 10px rgba(0, 0, 0, 0.05)',
+                card: '0 4px 20px rgba(0, 0, 0, 0.06)',
+                darkCard: '0 4px 20px rgba(0, 0, 0, 0.6)',
             },
             borderRadius: {
                 button: '6px',

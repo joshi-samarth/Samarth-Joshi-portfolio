@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
 import { personalInfo } from '../data/data';
 
 const Contact = () => {
+    const formRef = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -38,7 +40,7 @@ const Contact = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
@@ -47,30 +49,52 @@ const Contact = () => {
         }
 
         setIsSubmitting(true);
-        setTimeout(() => {
+
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        try {
+            if (serviceID && templateID && publicKey) {
+                await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
+            } else {
+                // Direct Mailto fallback
+                const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+                window.open(mailtoUrl, '_blank');
+            }
+
             setIsSubmitting(false);
             setIsSubmitted(true);
             setFormData({ name: '', email: '', subject: '', message: '' });
-            setTimeout(() => setIsSubmitted(false), 5000);
-        }, 500);
+            setTimeout(() => setIsSubmitted(false), 6000);
+        } catch (error) {
+            console.error('Email send error:', error);
+            const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            window.open(mailtoUrl, '_blank');
+            
+            setIsSubmitting(false);
+            setIsSubmitted(true);
+            setFormData({ name: '', email: '', subject: '', message: '' });
+            setTimeout(() => setIsSubmitted(false), 6000);
+        }
     };
 
     return (
         <section
             id="contact"
-            className="py-20 bg-[#292124] text-[#FFFFFF] border-t border-[#42363A]"
+            className="py-20 bg-[#FFFFFF] dark:bg-[#000000] text-[#000000] dark:text-[#FFFFFF] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Section Header */}
                 <div className="max-w-2xl mb-12">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#D9D9D9] mb-1">
+                    <p className="section-subtitle mb-1">
                         Get In Touch
                     </p>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-[#FFFFFF] tracking-tight">
+                    <h2 className="section-title">
                         Let's Connect
                     </h2>
-                    <p className="mt-2 text-base text-[#D9D9D9]">
+                    <p className="mt-2 text-base text-[#666666] dark:text-[#CCCCCC]">
                         I'm always open to discussing software development, internship opportunities, projects, and new opportunities.
                     </p>
                 </div>
@@ -79,47 +103,47 @@ const Contact = () => {
                     
                     {/* Left: Contact Info */}
                     <div className="lg:col-span-5 space-y-6">
-                        <div className="bg-[#32282B] border border-[#42363A] rounded-xl p-6 sm:p-8 space-y-6 shadow-subtle">
-                            <h3 className="text-lg font-bold text-[#FFFFFF]">
+                        <div className="bg-[#FAFAFA] dark:bg-[#1A1A1A] border border-[#CCCCCC] dark:border-[#333333] rounded-xl p-6 sm:p-8 space-y-6 shadow-subtle">
+                            <h3 className="text-lg font-bold text-[#000000] dark:text-[#FFFFFF]">
                                 Contact Details
                             </h3>
 
-                            <div className="space-y-5 text-sm text-[#D9D9D9]">
+                            <div className="space-y-5 text-sm text-[#666666] dark:text-[#CCCCCC]">
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#FFFFFF] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#000000] dark:text-[#FFFFFF] mb-0.5">
                                         Email
                                     </p>
-                                    <a href={`mailto:${personalInfo.email}`} className="text-[#FFFFFF] font-medium hover:text-[#8F3D45] transition-colors">
+                                    <a href={`mailto:${personalInfo.email}`} className="text-[#000000] dark:text-[#FFFFFF] font-medium hover:text-[#666666] dark:hover:text-[#CCCCCC] transition-colors">
                                         {personalInfo.email}
                                     </a>
                                 </div>
 
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#FFFFFF] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#000000] dark:text-[#FFFFFF] mb-0.5">
                                         Phone
                                     </p>
-                                    <p className="text-[#FFFFFF] font-medium">
+                                    <p className="text-[#000000] dark:text-[#FFFFFF] font-medium">
                                         {personalInfo.phone}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#FFFFFF] mb-0.5">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#000000] dark:text-[#FFFFFF] mb-0.5">
                                         Location
                                     </p>
-                                    <p className="text-[#FFFFFF] font-medium">
+                                    <p className="text-[#000000] dark:text-[#FFFFFF] font-medium">
                                         {personalInfo.location}
                                     </p>
                                 </div>
 
                                 <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold">
                                     {personalInfo.profiles?.linkedin?.url && (
-                                        <a href={personalInfo.profiles.linkedin.url} target="_blank" rel="noopener noreferrer" className="text-[#FFFFFF] hover:text-[#8F3D45] transition-colors">
+                                        <a href={personalInfo.profiles.linkedin.url} target="_blank" rel="noopener noreferrer" className="text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#CCCCCC] transition-colors">
                                             LinkedIn Profile →
                                         </a>
                                     )}
                                     {personalInfo.profiles?.github?.url && (
-                                        <a href={personalInfo.profiles.github.url} target="_blank" rel="noopener noreferrer" className="text-[#FFFFFF] hover:text-[#8F3D45] transition-colors">
+                                        <a href={personalInfo.profiles.github.url} target="_blank" rel="noopener noreferrer" className="text-[#000000] dark:text-[#FFFFFF] hover:text-[#666666] dark:hover:text-[#CCCCCC] transition-colors">
                                             GitHub Repositories →
                                         </a>
                                     )}
@@ -130,21 +154,21 @@ const Contact = () => {
 
                     {/* Right: Contact Form */}
                     <div className="lg:col-span-7">
-                        <div className="bg-[#32282B] border border-[#42363A] rounded-xl p-6 sm:p-8 shadow-subtle">
-                            <h3 className="text-lg font-bold text-[#FFFFFF] mb-6">
+                        <div className="bg-[#FAFAFA] dark:bg-[#1A1A1A] border border-[#CCCCCC] dark:border-[#333333] rounded-xl p-6 sm:p-8 shadow-subtle">
+                            <h3 className="text-lg font-bold text-[#000000] dark:text-[#FFFFFF] mb-6">
                                 Send a Message
                             </h3>
 
                             {isSubmitted && (
-                                <div className="mb-6 p-4 rounded-lg bg-[#8F3D45]/20 border border-[#8F3D45]/40 text-[#FFFFFF] text-sm font-medium">
+                                <div className="mb-6 p-4 rounded-lg bg-[#333333]/10 dark:bg-[#FFFFFF]/10 border border-[#333333] dark:border-[#FFFFFF] text-[#000000] dark:text-[#FFFFFF] text-sm font-medium">
                                     Message sent successfully. Thank you for reaching out!
                                 </div>
                             )}
 
-                            <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                            <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label htmlFor="name" className="block text-xs font-semibold text-[#FFFFFF] uppercase mb-1">
+                                        <label htmlFor="name" className="block text-xs font-semibold text-[#000000] dark:text-[#FFFFFF] uppercase mb-1">
                                             Name *
                                         </label>
                                         <input
@@ -154,13 +178,13 @@ const Contact = () => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="Your Name"
-                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#FFFFFF] placeholder-[#707070] focus:outline-none focus:border-[#8F3D45]"
+                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#FFFFFF] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] text-sm text-[#000000] dark:text-[#FFFFFF] placeholder-[#999999] focus:outline-none focus:border-[#000000] dark:focus:border-[#FFFFFF] transition-colors"
                                         />
-                                        {errors.name && <p className="mt-1 text-xs text-[#E57373]">{errors.name}</p>}
+                                        {errors.name && <p className="mt-1 text-xs text-[#000000] dark:text-[#FFFFFF] font-semibold">{errors.name}</p>}
                                     </div>
 
                                     <div>
-                                        <label htmlFor="email" className="block text-xs font-semibold text-[#FFFFFF] uppercase mb-1">
+                                        <label htmlFor="email" className="block text-xs font-semibold text-[#000000] dark:text-[#FFFFFF] uppercase mb-1">
                                             Email *
                                         </label>
                                         <input
@@ -170,14 +194,14 @@ const Contact = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             placeholder="your.email@example.com"
-                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#FFFFFF] placeholder-[#707070] focus:outline-none focus:border-[#8F3D45]"
+                                            className="w-full px-3.5 py-2.5 rounded-lg bg-[#FFFFFF] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] text-sm text-[#000000] dark:text-[#FFFFFF] placeholder-[#999999] focus:outline-none focus:border-[#000000] dark:focus:border-[#FFFFFF] transition-colors"
                                         />
-                                        {errors.email && <p className="mt-1 text-xs text-[#E57373]">{errors.email}</p>}
+                                        {errors.email && <p className="mt-1 text-xs text-[#000000] dark:text-[#FFFFFF] font-semibold">{errors.email}</p>}
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="subject" className="block text-xs font-semibold text-[#FFFFFF] uppercase mb-1">
+                                    <label htmlFor="subject" className="block text-xs font-semibold text-[#000000] dark:text-[#FFFFFF] uppercase mb-1">
                                         Subject *
                                     </label>
                                     <input
@@ -187,13 +211,13 @@ const Contact = () => {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         placeholder="Software Development Opportunity / Inquiry"
-                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#FFFFFF] placeholder-[#707070] focus:outline-none focus:border-[#8F3D45]"
+                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FFFFFF] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] text-sm text-[#000000] dark:text-[#FFFFFF] placeholder-[#999999] focus:outline-none focus:border-[#000000] dark:focus:border-[#FFFFFF] transition-colors"
                                     />
-                                    {errors.subject && <p className="mt-1 text-xs text-[#E57373]">{errors.subject}</p>}
+                                    {errors.subject && <p className="mt-1 text-xs text-[#000000] dark:text-[#FFFFFF] font-semibold">{errors.subject}</p>}
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-xs font-semibold text-[#FFFFFF] uppercase mb-1">
+                                    <label htmlFor="message" className="block text-xs font-semibold text-[#000000] dark:text-[#FFFFFF] uppercase mb-1">
                                         Message *
                                     </label>
                                     <textarea
@@ -203,9 +227,9 @@ const Contact = () => {
                                         value={formData.message}
                                         onChange={handleChange}
                                         placeholder="Write your message here..."
-                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#231B1E] border border-[#42363A] text-sm text-[#FFFFFF] placeholder-[#707070] focus:outline-none focus:border-[#8F3D45] resize-none"
+                                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FFFFFF] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] text-sm text-[#000000] dark:text-[#FFFFFF] placeholder-[#999999] focus:outline-none focus:border-[#000000] dark:focus:border-[#FFFFFF] transition-colors resize-none"
                                     />
-                                    {errors.message && <p className="mt-1 text-xs text-[#E57373]">{errors.message}</p>}
+                                    {errors.message && <p className="mt-1 text-xs text-[#000000] dark:text-[#FFFFFF] font-semibold">{errors.message}</p>}
                                 </div>
 
                                 <button

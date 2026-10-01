@@ -7,7 +7,7 @@ const CodingProfiles = () => {
     return (
         <section
             id="coding-profiles"
-            className="py-20 bg-[#F0F0F0] dark:bg-[#292124] border-t border-[#D9D9D9] dark:border-[#42363A]"
+            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -27,34 +27,34 @@ const CodingProfiles = () => {
                                 href={profile.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="card-clean p-6 flex flex-col justify-between space-y-4 hover:border-[#8F3D45] dark:hover:border-[#8F3D45] transition-colors"
+                                className="card-clean p-6 flex flex-col justify-between space-y-4 hover:border-[#000000] dark:hover:border-[#FFFFFF] transition-all duration-200"
                                 aria-label={`Visit ${profile.name} profile`}
                             >
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between">
-                                        <div className="p-2 rounded bg-[#F0F0F0] dark:bg-[#231B1E] border border-[#D9D9D9] dark:border-[#42363A]">
+                                        <div className="p-2.5 rounded-lg bg-[#FAFAFA] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333]">
                                             {Icon && <Icon className="w-6 h-6" style={{ color: profile.brandColor }} />}
                                         </div>
-                                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-[#F0F0F0] dark:bg-[#231B1E] text-[#707070] dark:text-[#D9D9D9] border border-[#D9D9D9] dark:border-[#42363A]">
+                                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-[#FAFAFA] dark:bg-[#121212] text-[#666666] dark:text-[#CCCCCC] border border-[#CCCCCC] dark:border-[#333333]">
                                             {profile.badge}
                                         </span>
                                     </div>
 
                                     <div>
-                                        <h3 className="text-lg font-bold text-[#333333] dark:text-[#FFFFFF]">
+                                        <h3 className="text-lg font-bold text-[#000000] dark:text-[#FFFFFF]">
                                             {profile.name}
                                         </h3>
-                                        <p className="text-xs text-[#707070] dark:text-[#D9D9D9] font-mono">
+                                        <p className="text-xs text-[#666666] dark:text-[#999999] font-mono">
                                             {profile.username}
                                         </p>
                                     </div>
 
-                                    <p className="text-xs sm:text-sm text-[#707070] dark:text-[#D9D9D9] leading-relaxed">
+                                    <p className="text-xs sm:text-sm text-[#666666] dark:text-[#CCCCCC] leading-relaxed">
                                         {profile.description}
                                     </p>
                                 </div>
 
-                                <div className="pt-3 border-t border-[#D9D9D9] dark:border-[#42363A] flex items-center justify-between text-xs font-semibold text-[#8F3D45] dark:text-[#8F3D45]">
+                                <div className="pt-3 border-t border-[#CCCCCC] dark:border-[#333333] flex items-center justify-between text-xs font-bold text-[#000000] dark:text-[#FFFFFF]">
                                     <span>Visit Profile</span>
                                     <span>→</span>
                                 </div>

@@ -45,7 +45,7 @@ const Testimonials = () => {
         <section
             id="testimonials"
             ref={ref}
-            className="py-20 bg-[#F6F0E8] dark:bg-[#292124] border-t border-[#DDD2C8] dark:border-[#42363A]"
+            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -77,36 +77,36 @@ const Testimonials = () => {
                             >
                                 {/* Quote Icon */}
                                 <div className="flex justify-start">
-                                    <div className="w-12 h-12 bg-[#8F3D45]/10 rounded-full flex items-center justify-center">
-                                        <FaQuoteLeft className="text-[#8F3D45] text-xl" />
+                                    <div className="w-12 h-12 bg-[#FAFAFA] dark:bg-[#1A1A1A] border border-[#CCCCCC] dark:border-[#333333] rounded-full flex items-center justify-center">
+                                        <FaQuoteLeft className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
                                     </div>
                                 </div>
 
                                 {/* Testimonial Text */}
-                                <p className="text-[#756D69] dark:text-[#DDD2C8] text-base md:text-lg leading-relaxed italic">
+                                <p className="text-[#666666] dark:text-[#CCCCCC] text-base md:text-lg leading-relaxed italic">
                                     "{testimonials[currentIndex].text}"
                                 </p>
 
                                 {/* Author Info */}
-                                <div className="flex items-center gap-4 pt-4 border-t border-[#DDD2C8] dark:border-[#42363A]">
-                                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#8F3D45]">
+                                <div className="flex items-center gap-4 pt-4 border-t border-[#CCCCCC] dark:border-[#333333]">
+                                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#000000] dark:border-[#FFFFFF]">
                                         <img
                                             src={testimonials[currentIndex].image}
                                             alt={testimonials[currentIndex].name}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {
-                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=8F3D45&color=F6F0E8&size=200`;
+                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=000000&color=FFFFFF&size=200`;
                                             }}
                                         />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-bold text-[#252222] dark:text-[#F6F0E8]">
+                                        <h4 className="text-base font-bold text-[#000000] dark:text-[#FFFFFF]">
                                             {testimonials[currentIndex].name}
                                         </h4>
-                                        <p className="text-xs font-semibold text-[#8F3D45]">
+                                        <p className="text-xs font-semibold text-[#666666] dark:text-[#999999]">
                                             {testimonials[currentIndex].role}
                                         </p>
-                                        <p className="text-xs text-[#756D69] dark:text-[#DDD2C8]">
+                                        <p className="text-xs text-[#999999] dark:text-[#666666]">
                                             {testimonials[currentIndex].company}
                                         </p>
                                     </div>
@@ -118,7 +118,7 @@ const Testimonials = () => {
                         <div className="flex justify-center items-center gap-4 mt-8">
                             <button
                                 onClick={prevTestimonial}
-                                className="w-10 h-10 rounded-full border border-[#DDD2C8] dark:border-[#42363A] bg-white dark:bg-[#32282B] flex items-center justify-center text-[#252222] dark:text-[#F6F0E8] hover:border-[#8F3D45] hover:text-[#8F3D45] transition-colors"
+                                className="w-10 h-10 rounded-full border border-[#CCCCCC] dark:border-[#333333] bg-white dark:bg-[#1A1A1A] flex items-center justify-center text-[#000000] dark:text-[#FFFFFF] hover:border-[#000000] dark:hover:border-[#FFFFFF] transition-colors"
                                 aria-label="Previous testimonial"
                             >
                                 <FaChevronLeft />
@@ -131,8 +131,8 @@ const Testimonials = () => {
                                         key={index}
                                         onClick={() => goToTestimonial(index)}
                                         className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                                                ? 'bg-[#8F3D45] w-6'
-                                                : 'bg-[#DDD2C8] dark:bg-[#42363A] hover:bg-[#8F3D45]/50'
+                                                ? 'bg-[#000000] dark:bg-[#FFFFFF] w-6'
+                                                : 'bg-[#CCCCCC] dark:bg-[#333333] hover:bg-[#666666]'
                                             }`}
                                         aria-label={`Go to testimonial ${index + 1}`}
                                     />
@@ -141,7 +141,7 @@ const Testimonials = () => {
 
                             <button
                                 onClick={nextTestimonial}
-                                className="w-10 h-10 rounded-full border border-[#DDD2C8] dark:border-[#42363A] bg-white dark:bg-[#32282B] flex items-center justify-center text-[#252222] dark:text-[#F6F0E8] hover:border-[#8F3D45] hover:text-[#8F3D45] transition-colors"
+                                className="w-10 h-10 rounded-full border border-[#CCCCCC] dark:border-[#333333] bg-white dark:bg-[#1A1A1A] flex items-center justify-center text-[#000000] dark:text-[#FFFFFF] hover:border-[#000000] dark:hover:border-[#FFFFFF] transition-colors"
                                 aria-label="Next testimonial"
                             >
                                 <FaChevronRight />

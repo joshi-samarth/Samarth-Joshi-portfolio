@@ -32,7 +32,7 @@ const Experience = () => {
         <section
             id="experience"
             ref={ref}
-            className="py-20 bg-[#F6F0E8] dark:bg-[#292124] border-t border-[#DDD2C8] dark:border-[#42363A]"
+            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -51,7 +51,7 @@ const Experience = () => {
                     {/* Timeline */}
                     <div className="relative max-w-4xl mx-auto">
                         {/* Center Line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#DDD2C8] dark:bg-[#42363A] hidden md:block" />
+                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#CCCCCC] dark:bg-[#333333] hidden md:block" />
 
                         {experience.map((item, index) => (
                             <motion.div
@@ -63,11 +63,11 @@ const Experience = () => {
                                 <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                                     }`}>
                                     {/* Timeline Dot */}
-                                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[#F6F0E8] dark:bg-[#292124] border-2 border-[#8F3D45] items-center justify-center shadow-subtle z-10">
+                                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[#FFFFFF] dark:bg-[#000000] border-2 border-[#000000] dark:border-[#FFFFFF] items-center justify-center shadow-subtle z-10">
                                         {item.type === 'work' ? (
-                                            <FaBriefcase className="text-[#8F3D45] text-lg" />
+                                            <FaBriefcase className="text-[#000000] dark:text-[#FFFFFF] text-lg" />
                                         ) : (
-                                            <FaGraduationCap className="text-[#8F3D45] text-lg" />
+                                            <FaGraduationCap className="text-[#000000] dark:text-[#FFFFFF] text-lg" />
                                         )}
                                     </div>
 
@@ -80,24 +80,24 @@ const Experience = () => {
                                         {/* Mobile Icon */}
                                         <div className="md:hidden mb-4">
                                             {item.type === 'work' ? (
-                                                <FaBriefcase className="text-[#8F3D45] text-xl" />
+                                                <FaBriefcase className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
                                             ) : (
-                                                <FaGraduationCap className="text-[#8F3D45] text-xl" />
+                                                <FaGraduationCap className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
                                             )}
                                         </div>
 
                                         {/* Date Badge */}
-                                        <div className="inline-flex items-center gap-2 bg-[#8F3D45]/10 text-[#8F3D45] dark:text-[#DDD2C8] px-3 py-1 rounded-md text-xs font-semibold mb-4">
+                                        <div className="inline-flex items-center gap-2 bg-[#FAFAFA] dark:bg-[#121212] text-[#000000] dark:text-[#FFFFFF] border border-[#CCCCCC] dark:border-[#333333] px-3 py-1 rounded-md text-xs font-semibold mb-4">
                                             <FaCalendar />
                                             {item.period}
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#252222] dark:text-[#F6F0E8] mb-1">
+                                        <h3 className="text-xl font-bold text-[#000000] dark:text-[#FFFFFF] mb-1">
                                             {item.title}
                                         </h3>
 
-                                        <div className="flex items-center gap-2 text-[#756D69] dark:text-[#DDD2C8] text-xs font-medium mb-4">
-                                            <span className="font-semibold text-[#8F3D45]">{item.company}</span>
+                                        <div className="flex items-center gap-2 text-[#666666] dark:text-[#999999] text-xs font-medium mb-4">
+                                            <span className="font-semibold text-[#000000] dark:text-[#FFFFFF]">{item.company}</span>
                                             <span>•</span>
                                             <span className="flex items-center gap-1">
                                                 <FaMapMarkerAlt className="text-xs" />
@@ -110,9 +110,9 @@ const Experience = () => {
                                                 {item.description.map((point, idx) => (
                                                     <li
                                                         key={idx}
-                                                        className="flex items-start gap-2 text-xs sm:text-sm text-[#756D69] dark:text-[#DDD2C8]"
+                                                        className="flex items-start gap-2 text-xs sm:text-sm text-[#666666] dark:text-[#CCCCCC]"
                                                     >
-                                                        <span className="text-[#8F3D45] mt-0.5">•</span>
+                                                        <span className="text-[#000000] dark:text-[#FFFFFF] mt-0.5">•</span>
                                                         <span>{point}</span>
                                                     </li>
                                                 ))}

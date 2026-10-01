@@ -7,7 +7,7 @@ const InternshipTimeline = () => {
     return (
         <section
             id="internship"
-            className="py-20 bg-[#F0F0F0] dark:bg-[#292124] border-t border-[#D9D9D9] dark:border-[#42363A]"
+            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -24,7 +24,7 @@ const InternshipTimeline = () => {
                 </motion.div>
 
                 {/* Vertical Timeline */}
-                <div className="relative pl-6 sm:pl-8 border-l-2 border-[#D9D9D9] dark:border-[#42363A] space-y-10 ml-2 sm:ml-4">
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-[#CCCCCC] dark:border-[#333333] space-y-10 ml-2 sm:ml-4">
                     {internshipData.map((internship, index) => (
                         <motion.div
                             key={internship.id}
@@ -35,32 +35,32 @@ const InternshipTimeline = () => {
                             className="relative group"
                         >
                             
-                            {/* Signature Burgundy Timeline Node */}
+                            {/* Monochrome Timeline Node */}
                             <motion.div
                                 initial={{ scale: 0 }}
                                 whileInView={{ scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.25, delay: index * 0.1 + 0.1 }}
-                                className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-[#8F3D45] dark:bg-[#8F3D45] ring-4 ring-[#F0F0F0] dark:ring-[#292124]"
+                                className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-[#000000] dark:bg-[#FFFFFF] ring-4 ring-[#FAFAFA] dark:ring-[#121212]"
                             />
 
                             {/* Timeline Card */}
                             <div className="card-clean p-6 space-y-4">
                                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                                     <div>
-                                        <h3 className="text-xl font-bold text-[#333333] dark:text-[#FFFFFF]">
+                                        <h3 className="text-xl font-bold text-[#000000] dark:text-[#FFFFFF]">
                                             {internship.role}
                                         </h3>
-                                        <p className="text-base font-semibold text-[#8F3D45] dark:text-[#8F3D45] mt-0.5">
+                                        <p className="text-base font-semibold text-[#333333] dark:text-[#CCCCCC] mt-0.5">
                                             {internship.company}
                                         </p>
-                                        <p className="text-xs text-[#707070] dark:text-[#D9D9D9] mt-0.5">
+                                        <p className="text-xs text-[#666666] dark:text-[#999999] mt-0.5">
                                             {internship.location}
                                         </p>
                                     </div>
 
                                     <div className="flex items-center gap-3 self-start flex-wrap">
-                                        <div className="text-xs font-semibold px-3 py-1 rounded bg-[#F0F0F0] dark:bg-[#231B1E] text-[#8F3D45] dark:text-[#FFFFFF] border border-[#D9D9D9] dark:border-[#42363A]">
+                                        <div className="text-xs font-semibold px-3 py-1 rounded bg-[#FAFAFA] dark:bg-[#121212] text-[#000000] dark:text-[#FFFFFF] border border-[#CCCCCC] dark:border-[#333333]">
                                             {internship.duration}
                                         </div>
 
@@ -72,7 +72,7 @@ const InternshipTimeline = () => {
                                                 className="btn-primary text-xs py-1.5 px-3 flex items-center gap-1.5 shadow-none"
                                                 title="View Completion Certificate"
                                             >
-                                                <FaAward className="w-3.5 h-3.5 text-[#FFFFFF]" />
+                                                <FaAward className="w-3.5 h-3.5" />
                                                 <span>View Certificate</span>
                                                 <FaExternalLinkAlt className="w-2.5 h-2.5 opacity-80" />
                                             </a>
@@ -80,9 +80,9 @@ const InternshipTimeline = () => {
                                     </div>
                                 </div>
 
-                                {/* Technologies Used - Simple Brand Icons */}
+                                {/* Technologies Used */}
                                 <div className="pt-2">
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#707070] dark:text-[#D9D9D9] mb-2">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#999999] mb-2">
                                         Technologies Used
                                     </p>
                                     <div className="flex flex-wrap items-center gap-3">
@@ -91,11 +91,11 @@ const InternshipTimeline = () => {
                                             return (
                                                 <div
                                                     key={tech.name}
-                                                    className="group relative flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#F0F0F0] dark:bg-[#231B1E] border border-[#D9D9D9] dark:border-[#42363A] hover:border-[#8F3D45] transition-colors"
+                                                    className="group relative flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#FAFAFA] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] hover:border-[#666666] dark:hover:border-[#999999] transition-colors"
                                                     title={tech.name}
                                                 >
                                                     {Icon && <Icon className="w-4 h-4" style={{ color: tech.brandColor }} />}
-                                                    <span className="text-xs font-medium text-[#333333] dark:text-[#FFFFFF]">
+                                                    <span className="text-xs font-medium text-[#000000] dark:text-[#FFFFFF]">
                                                         {tech.name}
                                                     </span>
                                                 </div>
@@ -105,32 +105,32 @@ const InternshipTimeline = () => {
                                 </div>
 
                                 {/* Responsibilities & Achievements */}
-                                <div className="pt-2 border-t border-[#D9D9D9] dark:border-[#42363A]">
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#707070] dark:text-[#D9D9D9] mb-2">
+                                <div className="pt-2 border-t border-[#CCCCCC] dark:border-[#333333]">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#999999] mb-2">
                                         Key Technical Work
                                     </p>
                                     <ul className="space-y-1.5">
                                         {internship.achievements.map((item, aIdx) => (
-                                            <li key={aIdx} className="text-xs sm:text-sm text-[#707070] dark:text-[#D9D9D9] flex items-start gap-2">
-                                                <span className="text-[#8F3D45] font-bold">•</span>
+                                            <li key={aIdx} className="text-xs sm:text-sm text-[#666666] dark:text-[#CCCCCC] flex items-start gap-2">
+                                                <span className="text-[#000000] dark:text-[#FFFFFF] font-bold">•</span>
                                                 <span>{item}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                {/* View Certificate Banner inside Internship Card */}
+                                {/* View Certificate Banner */}
                                 {internship.certificateUrl && (
-                                    <div className="pt-3 border-t border-[#D9D9D9] dark:border-[#42363A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-[#F0F0F0]/60 dark:bg-[#231B1E]/60 p-3.5 rounded-lg border border-[#D9D9D9] dark:border-[#42363A]">
+                                    <div className="pt-3 border-t border-[#CCCCCC] dark:border-[#333333] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-[#FAFAFA] dark:bg-[#121212] p-3.5 rounded-lg border border-[#CCCCCC] dark:border-[#333333]">
                                         <div className="flex items-center gap-2.5">
-                                            <div className="p-2 rounded bg-white dark:bg-[#32282B] border border-[#D9D9D9] dark:border-[#42363A] text-[#8F3D45]">
+                                            <div className="p-2 rounded bg-white dark:bg-[#1A1A1A] border border-[#CCCCCC] dark:border-[#333333] text-[#000000] dark:text-[#FFFFFF]">
                                                 <FaAward className="w-4 h-4" />
                                             </div>
                                             <div>
-                                                <p className="text-xs font-bold text-[#333333] dark:text-[#FFFFFF]">
+                                                <p className="text-xs font-bold text-[#000000] dark:text-[#FFFFFF]">
                                                     {internship.certificateTitle || "Internship Completion Certificate"}
                                                 </p>
-                                                <p className="text-[11px] text-[#707070] dark:text-[#D9D9D9]">
+                                                <p className="text-[11px] text-[#666666] dark:text-[#999999]">
                                                     Verified credential issued by {internship.company}
                                                 </p>
                                             </div>

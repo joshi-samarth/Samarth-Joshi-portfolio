@@ -198,7 +198,7 @@ export const internshipData = [
         role: "Project Contributor (Intern)",
         duration: "February 2026 – April 2026",
         location: "Pune, Maharashtra",
-        certificateUrl: "https://drive.google.com/file/d/1NYCDJkZt13BAg6sArdT6Thi7GvmLVwT6/view?usp=sharing",
+        certificateUrl: "https://drive.google.com/file/d/1Xpm9pCiiomeZat9AstV2WdcZlE3NEqDo/view?usp=sharing",
         certificateTitle: "AWS Student Builder Internship Certificate",
         technologies: [
             { name: "AWS Lambda", icon: SiAwslambda, brandColor: "#FF9900" },
@@ -223,7 +223,7 @@ export const certificatesData = [
         title: "AWS Student Builder Internship Certificate",
         issuer: "AWS Student Builder Group – PICT",
         issueDate: "April 2026",
-        certificateUrl: "https://drive.google.com/file/d/1NYCDJkZt13BAg6sArdT6Thi7GvmLVwT6/view?usp=sharing",
+        certificateUrl: "https://drive.google.com/file/d/1Xpm9pCiiomeZat9AstV2WdcZlE3NEqDo/view?usp=sharing",
         description: "Certified completion of cloud serverless development, AWS infrastructure automation, and full-stack integration.",
         tags: ["AWS", "Serverless", "React.js", "Python"]
     }
