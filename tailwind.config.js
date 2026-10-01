@@ -8,29 +8,29 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Burgundy + Beige + Charcoal palette tokens
+                // Finalized Color Palette
                 bg: {
-                    DEFAULT: '#F6F0E8',     // Warm beige / ivory
-                    secondary: '#EFE8DD',   // Slightly deeper beige for cards/containers
-                    card: '#FFFFFF',        // Clean contrast white or light beige
+                    DEFAULT: '#FFFFFF',     // Main background
+                    secondary: '#F0F0F0',   // Secondary background for section separation
+                    card: '#FFFFFF',        // Card background
                 },
                 text: {
-                    primary: '#252222',      // Dark charcoal
-                    secondary: '#756D69',    // Muted warm gray
+                    primary: '#333333',      // Primary text / charcoal
+                    secondary: '#707070',    // Secondary text / gray
                 },
                 border: {
-                    DEFAULT: '#DDD2C8',      // Soft beige-gray
+                    DEFAULT: '#D9D9D9',      // Subtle border
                 },
                 accent: {
-                    DEFAULT: '#8F3D45',      // Deep burgundy
-                    hover: '#733039',        // Dark burgundy
+                    DEFAULT: '#8F3D45',      // Signature burgundy accent
+                    hover: '#733039',        // Burgundy hover
                 },
                 dark: {
-                    bg: '#292124',           // Charcoal with subtle burgundy undertone
-                    secondary: '#231B1E',    // Darker section variant
-                    card: '#32282B',         // Dark section card
-                    text: '#F6F0E8',         // Light warm beige text
-                    muted: '#DDD2C8',        // Secondary text in dark sections
+                    bg: '#292124',           // Dark section background
+                    secondary: '#231B1E',    // Secondary dark container
+                    card: '#32282B',         // Dark section card background
+                    text: '#FFFFFF',         // Light text in dark sections
+                    muted: '#D9D9D9',        // Muted text in dark sections
                     border: '#42363A',       // Dark section border
                     accent: '#8F3D45',       // Burgundy accent
                     accentHover: '#733039',
@@ -40,11 +40,11 @@ export default {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-                subtle: '0 4px 16px rgba(37, 34, 34, 0.04)',
+                subtle: '0 2px 10px rgba(0, 0, 0, 0.04)',
             },
             borderRadius: {
-                button: '8px',
-                card: '10px',
+                button: '6px',
+                card: '8px',
             }
         },
     },

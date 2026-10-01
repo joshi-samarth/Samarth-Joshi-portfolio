@@ -14,7 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     return (
-        <div className="min-h-screen bg-[#F6F0E8] dark:bg-[#292124] text-[#252222] dark:text-[#F6F0E8] antialiased selection:bg-[#8F3D45]/20 selection:text-[#8F3D45]">
+        <div className="min-h-screen bg-[#FFFFFF] dark:bg-[#292124] text-[#333333] dark:text-[#FFFFFF] antialiased selection:bg-[#8F3D45]/20 selection:text-[#8F3D45]">
             {/* Sticky Navigation Header */}
             <Header />
 
