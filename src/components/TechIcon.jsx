@@ -44,7 +44,7 @@ const TechIcon = ({
             aria-label={name}
         >
             <div 
-                className={`${sizeClasses[size]} rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:border-primary/50 group-hover:shadow-md group-focus:scale-110 group-focus:border-primary/50`}
+                className={`${sizeClasses[size]} rounded-xl bg-[#EDE6DA] dark:bg-[#211C19] border border-[#D8CEC2] dark:border-[#40352E] flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:border-[#6E473B] dark:group-hover:border-[#A66B57] group-focus:scale-110 group-focus:border-[#6E473B] dark:group-focus:border-[#A66B57]`}
                 style={{
                     color: color || 'currentColor'
                 }}
@@ -53,7 +53,7 @@ const TechIcon = ({
             </div>
 
             {showLabel && (
-                <span className="mt-2 text-xs font-medium text-slate-600 dark:text-slate-300 text-center truncate max-w-[80px]">
+                <span className="mt-2 text-xs font-medium text-[#6E473B] dark:text-[#C8BBB0] text-center truncate max-w-[80px]">
                     {name}
                 </span>
             )}
@@ -64,10 +64,10 @@ const TechIcon = ({
                     isHovered ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 pointer-events-none'
                 }`}
             >
-                <div className="bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 text-xs font-semibold px-2.5 py-1.5 rounded-md shadow-lg border border-slate-700 dark:border-slate-200 whitespace-nowrap flex flex-col items-center">
+                <div className="bg-[#291C0E] text-[#F7F3ED] dark:bg-[#28211D] dark:text-[#F5EFE8] text-xs font-semibold px-2.5 py-1.5 rounded-md shadow-lg border border-[#4F3028] dark:border-[#40352E] whitespace-nowrap flex flex-col items-center">
                     <span>{name}</span>
                     {description && (
-                        <span className="text-[10px] font-normal text-slate-300 dark:text-slate-600 max-w-[180px] text-center whitespace-normal mt-0.5">
+                        <span className="text-[10px] font-normal text-[#D8CEC2] dark:text-[#C8BBB0] max-w-[180px] text-center whitespace-normal mt-0.5">
                             {description}
                         </span>
                     )}

@@ -5,7 +5,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="py-20 bg-[#F2F2F1] dark:bg-[#222222] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#EDE6DA] dark:bg-[#211C19] border-t border-[#D8CEC2] dark:border-[#40352E] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -20,14 +20,14 @@ const Skills = () => {
                     {Object.entries(skillsData).map(([key, category]) => (
                         <div
                             key={key}
-                            className="card-clean p-6 flex flex-col justify-between space-y-4"
+                            className="card-clean bg-[#F7F3ED] dark:bg-[#28211D] p-6 flex flex-col justify-between space-y-4 border border-[#D8CEC2] dark:border-[#40352E] hover:border-[#6E473B] dark:hover:border-[#A66B57]"
                         >
                             <div>
-                                <h3 className="text-lg font-bold text-[#2F2F2F] dark:text-[#F5F5F5] mb-1 flex items-center gap-2">
-                                    <span className="w-1.5 h-4 bg-[#222222] dark:bg-[#F5F5F5] rounded-full"></span>
+                                <h3 className="text-lg font-bold text-[#291C0E] dark:text-[#F5EFE8] mb-1 flex items-center gap-2">
+                                    <span className="w-1.5 h-4 bg-[#6E473B] dark:bg-[#A66B57] rounded-full"></span>
                                     <span>{category.title}</span>
                                 </h3>
-                                <p className="text-xs text-[#666666] dark:text-[#888888] mb-4">
+                                <p className="text-xs text-[#6E473B] dark:text-[#C8BBB0] mb-4">
                                     {category.description}
                                 </p>
 
@@ -37,10 +37,10 @@ const Skills = () => {
                                         return (
                                             <div
                                                 key={item.name}
-                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FAFAF9] dark:bg-[#181818] border border-[#DDDDDD] dark:border-[#333333] hover:border-[#666666] dark:hover:border-[#888888] transition-all duration-200"
+                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#EDE6DA] dark:bg-[#211C19] border border-[#D8CEC2] dark:border-[#40352E] hover:border-[#6E473B] dark:hover:border-[#A66B57] transition-all duration-200"
                                             >
                                                 {Icon && <Icon className="w-5 h-5 flex-shrink-0" style={{ color: item.brandColor }} />}
-                                                <span className="text-xs font-medium text-[#2F2F2F] dark:text-[#F5F5F5] truncate">
+                                                <span className="text-xs font-medium text-[#291C0E] dark:text-[#F5EFE8] truncate">
                                                     {item.name}
                                                 </span>
                                             </div>

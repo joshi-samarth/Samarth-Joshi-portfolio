@@ -5,7 +5,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="py-20 bg-[#F2F2F1] dark:bg-[#222222] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#EDE6DA] dark:bg-[#211C19] border-t border-[#D8CEC2] dark:border-[#40352E] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -19,14 +19,14 @@ const About = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     {/* Summary */}
-                    <div className="lg:col-span-5 card-clean p-6 sm:p-8 space-y-4">
-                        <h3 className="text-lg font-bold text-[#2F2F2F] dark:text-[#F5F5F5]">
+                    <div className="lg:col-span-5 card-clean bg-[#F7F3ED] dark:bg-[#28211D] p-6 sm:p-8 space-y-4 border border-[#D8CEC2] dark:border-[#40352E] dark:hover:border-[#A66B57]">
+                        <h3 className="text-lg font-bold text-[#291C0E] dark:text-[#F5EFE8]">
                             Developer Mindset
                         </h3>
-                        <p className="text-base text-[#666666] dark:text-[#B5B5B5] leading-relaxed">
+                        <p className="text-base text-[#6E473B] dark:text-[#C8BBB0] leading-relaxed">
                             {aboutMe.summary}
                         </p>
-                        <p className="text-sm text-[#666666] dark:text-[#B5B5B5] leading-relaxed">
+                        <p className="text-sm text-[#6E473B] dark:text-[#C8BBB0] leading-relaxed">
                             I am focused on writing readable, testable code with clean separation of concerns and optimized algorithmic performance.
                         </p>
                     </div>
@@ -36,13 +36,13 @@ const About = () => {
                         {aboutMe.pillars.map((pillar) => (
                             <div
                                 key={pillar.title}
-                                className="card-clean p-5 space-y-2"
+                                className="card-clean bg-[#F7F3ED] dark:bg-[#28211D] p-5 space-y-2 border border-[#D8CEC2] dark:border-[#40352E] dark:hover:border-[#A66B57]"
                             >
-                                <h4 className="text-base font-bold text-[#2F2F2F] dark:text-[#F5F5F5] flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-[#222222] dark:bg-[#F5F5F5]"></span>
+                                <h4 className="text-base font-bold text-[#291C0E] dark:text-[#F5EFE8] flex items-center gap-2">
+                                    <span className="w-2 h-2 rounded-full bg-[#6E473B] dark:bg-[#A66B57]"></span>
                                     <span>{pillar.title}</span>
                                 </h4>
-                                <p className="text-xs sm:text-sm text-[#666666] dark:text-[#B5B5B5] leading-relaxed">
+                                <p className="text-xs sm:text-sm text-[#6E473B] dark:text-[#C8BBB0] leading-relaxed">
                                     {pillar.desc}
                                 </p>
                             </div>

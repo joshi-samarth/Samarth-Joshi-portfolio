@@ -8,48 +8,65 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Light mode:
-                // Background: #FAFAF9, Sections: #F2F2F1, Headings: #2F2F2F, Body: #666666, Muted: #999999, Borders: #DDDDDD, Buttons: #222222, Button hover: #000000
-                // Dark mode:
-                // Background: #181818, Sections: #222222, Headings: #F5F5F5, Body: #B5B5B5, Muted: #888888, Borders: #333333, Buttons: #F5F5F5, Button text: #181818
+                // Final Visual Color System: Warm Beige + Brown + Dark Espresso
+                cream: {
+                    DEFAULT: '#F7F3ED',
+                    secondary: '#EDE6DA',
+                },
+                espresso: {
+                    DEFAULT: '#291C0E',
+                    dark: '#1C1309',
+                    card: '#23170B',
+                },
+                brown: {
+                    DEFAULT: '#6E473B',
+                    hover: '#4F3028',
+                    muted: '#8D6456',
+                },
+                sand: {
+                    DEFAULT: '#D8CEC2',
+                    dark: '#4F3028',
+                },
                 bg: {
-                    DEFAULT: '#FAFAF9',     // Light Background
-                    secondary: '#F2F2F1',   // Light Sections / Cards
-                    card: '#F2F2F1',
+                    DEFAULT: '#F7F3ED',     // Light Background
+                    secondary: '#EDE6DA',   // Light Sections / Cards
+                    card: '#F7F3ED',
                 },
                 text: {
-                    primary: '#2F2F2F',      // Light Headings
-                    secondary: '#666666',    // Light Body
-                    muted: '#999999',        // Light Muted
+                    primary: '#291C0E',      // Light Headings
+                    secondary: '#6E473B',    // Light Body / Secondary Accent
+                    muted: '#6E473B',
+                    light: '#F7F3ED',
                 },
                 border: {
-                    DEFAULT: '#DDDDDD',      // Light Borders
-                    dark: '#333333',        // Dark Borders
+                    DEFAULT: '#D8CEC2',      // Light Borders
+                    dark: '#4F3028',        // Dark Borders
                 },
                 btn: {
-                    DEFAULT: '#222222',      // Light Buttons
-                    hover: '#000000',        // Light Button Hover
+                    DEFAULT: '#6E473B',      // Primary Button
+                    hover: '#4F3028',        // Primary Button Hover
                 },
                 dark: {
-                    bg: '#181818',           // Dark Background
-                    secondary: '#222222',    // Dark Sections / Cards
-                    card: '#222222',
-                    cardHover: '#2A2A2A',
-                    text: '#F5F5F5',         // Dark Headings
-                    body: '#B5B5B5',         // Dark Body
-                    muted: '#888888',        // Dark Muted
-                    border: '#333333',       // Dark Borders
-                    btn: '#F5F5F5',          // Dark Buttons
-                    btnText: '#181818',      // Dark Button Text
-                    btnHover: '#FFFFFF',
+                    bg: '#171412',           // Dark Main Background
+                    secondary: '#211C19',    // Dark Secondary Section
+                    card: '#28211D',         // Dark Card Background
+                    cardHover: '#322924',
+                    text: '#F5EFE8',         // Dark Primary Text
+                    body: '#C8BBB0',         // Dark Secondary Text
+                    muted: '#96877D',        // Dark Muted Text
+                    border: '#40352E',       // Dark Border
+                    btn: '#A66B57',          // Dark Accent / Button
+                    btnText: '#F5EFE8',      // Dark Button Text
+                    btnHover: '#C0836B',     // Dark Accent Hover
+                    darkest: '#100E0C',      // Darkest Section (Footer / Contact)
                 }
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-                subtle: '0 2px 10px rgba(0, 0, 0, 0.04)',
-                card: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                subtle: '0 2px 10px rgba(41, 28, 14, 0.04)',
+                card: '0 4px 20px rgba(41, 28, 14, 0.06)',
                 darkCard: '0 4px 20px rgba(0, 0, 0, 0.4)',
             },
             borderRadius: {

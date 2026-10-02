@@ -27,14 +27,14 @@ const Header = () => {
 
     return (
         <header
-            className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#FAFAF9]/90 dark:bg-[#181818]/90 backdrop-blur-md border-b border-[#DDDDDD] dark:border-[#333333]"
+            className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-[#F7F3ED]/90 dark:bg-[#171412]/90 backdrop-blur-md border-b border-[#D8CEC2] dark:border-[#40352E]"
         >
             <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Main Navigation">
                 
                 {/* Brand Name / Logo */}
                 <button
                     onClick={() => scrollToSection('home')}
-                    className="text-base font-extrabold text-[#2F2F2F] dark:text-[#F5F5F5] hover:text-[#666666] dark:hover:text-[#B5B5B5] transition-colors tracking-tight"
+                    className="text-base font-extrabold text-[#291C0E] dark:text-[#F5EFE8] hover:text-[#6E473B] dark:hover:text-[#A66B57] transition-colors tracking-tight"
                 >
                     {personalInfo.name}
                 </button>
@@ -49,8 +49,8 @@ const Header = () => {
                                 onClick={() => scrollToSection(link.href)}
                                 className={`text-sm font-medium transition-colors ${
                                     isActive
-                                        ? 'text-[#2F2F2F] dark:text-[#F5F5F5] font-bold border-b-2 border-[#222222] dark:border-[#F5F5F5] pb-0.5'
-                                        : 'text-[#666666] dark:text-[#B5B5B5] hover:text-[#2F2F2F] dark:hover:text-[#F5F5F5]'
+                                        ? 'text-[#6E473B] dark:text-[#A66B57] font-bold border-b-2 border-[#6E473B] dark:border-[#A66B57] pb-0.5'
+                                        : 'text-[#291C0E] dark:text-[#C8BBB0] hover:text-[#6E473B] dark:hover:text-[#C0836B]'
                                 }`}
                             >
                                 {link.name}
@@ -64,7 +64,7 @@ const Header = () => {
                     {/* Theme Toggle Button */}
                     <button
                         onClick={() => setIsDark(!isDark)}
-                        className="text-xs font-semibold text-[#2F2F2F] dark:text-[#F5F5F5] bg-[#F2F2F1] dark:bg-[#222222] hover:bg-[#DDDDDD]/50 dark:hover:bg-[#333333] px-3 py-1.5 rounded-md border border-[#DDDDDD] dark:border-[#333333] transition-colors"
+                        className="text-xs font-semibold text-[#291C0E] dark:text-[#F5EFE8] bg-[#EDE6DA] dark:bg-[#211C19] hover:bg-[#D8CEC2]/50 dark:hover:bg-[#40352E]/50 px-3 py-1.5 rounded-md border border-[#D8CEC2] dark:border-[#40352E] transition-colors"
                         aria-label="Toggle dark mode"
                     >
                         {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
@@ -86,13 +86,13 @@ const Header = () => {
                 <div className="flex md:hidden items-center space-x-3">
                     <button
                         onClick={() => setIsDark(!isDark)}
-                        className="text-xs font-semibold text-[#2F2F2F] dark:text-[#F5F5F5] bg-[#F2F2F1] dark:bg-[#222222] px-2.5 py-1 rounded border border-[#DDDDDD] dark:border-[#333333]"
+                        className="text-xs font-semibold text-[#291C0E] dark:text-[#F5EFE8] bg-[#EDE6DA] dark:bg-[#211C19] px-2.5 py-1 rounded border border-[#D8CEC2] dark:border-[#40352E]"
                     >
                         {isDark ? '☀️ Light' : '🌙 Dark'}
                     </button>
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="p-2 text-[#2F2F2F] dark:text-[#F5F5F5] focus:outline-none"
+                        className="p-2 text-[#291C0E] dark:text-[#F5EFE8] focus:outline-none"
                         aria-label="Toggle menu"
                     >
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,17 +109,17 @@ const Header = () => {
 
             {/* Mobile Navigation Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden bg-[#FAFAF9] dark:bg-[#181818] border-b border-[#DDDDDD] dark:border-[#333333] px-4 py-4 space-y-3">
+                <div className="md:hidden bg-[#F7F3ED] dark:bg-[#171412] border-b border-[#D8CEC2] dark:border-[#40352E] px-4 py-4 space-y-3">
                     {navLinks.map((link) => (
                         <button
                             key={link.href}
                             onClick={() => scrollToSection(link.href)}
-                            className="block w-full text-left py-2 text-sm font-medium text-[#2F2F2F] dark:text-[#F5F5F5] hover:text-[#666666] dark:hover:text-[#B5B5B5]"
+                            className="block w-full text-left py-2 text-sm font-medium text-[#291C0E] dark:text-[#C8BBB0] hover:text-[#6E473B] dark:hover:text-[#A66B57]"
                         >
                             {link.name}
                         </button>
                     ))}
-                    <div className="pt-2 border-t border-[#DDDDDD] dark:border-[#333333]">
+                    <div className="pt-2 border-t border-[#D8CEC2] dark:border-[#40352E]">
                         <a
                             href={personalInfo.resumeUrl}
                             download

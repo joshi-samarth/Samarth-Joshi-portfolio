@@ -19,7 +19,7 @@ const Loading = () => {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-[#FAFAF9] dark:bg-[#181818]"
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-[#F7F3ED] dark:bg-[#171412]"
                 >
                     <div className="text-center">
                         <motion.div
@@ -34,14 +34,14 @@ const Loading = () => {
                             }}
                             className="w-16 h-16 mx-auto mb-6"
                         >
-                            <div className="w-full h-full border-4 border-[#222222] dark:border-[#F5F5F5] border-t-transparent rounded-full animate-spin" />
+                            <div className="w-full h-full border-4 border-[#6E473B] dark:border-[#A66B57] border-t-transparent rounded-full animate-spin" />
                         </motion.div>
 
                         <motion.h2
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl font-bold text-[#2F2F2F] dark:text-[#F5F5F5] tracking-wide"
+                            className="text-xl font-bold text-[#291C0E] dark:text-[#F5EFE8] tracking-wide"
                         >
                             Loading Portfolio...
                         </motion.h2>
