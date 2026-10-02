@@ -5,7 +5,7 @@ const Skills = () => {
     return (
         <section
             id="skills"
-            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#F2F2F1] dark:bg-[#222222] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -23,11 +23,11 @@ const Skills = () => {
                             className="card-clean p-6 flex flex-col justify-between space-y-4"
                         >
                             <div>
-                                <h3 className="text-lg font-bold text-[#000000] dark:text-[#FFFFFF] mb-1 flex items-center gap-2">
-                                    <span className="w-1.5 h-4 bg-[#000000] dark:bg-[#FFFFFF] rounded-full"></span>
+                                <h3 className="text-lg font-bold text-[#2F2F2F] dark:text-[#F5F5F5] mb-1 flex items-center gap-2">
+                                    <span className="w-1.5 h-4 bg-[#222222] dark:bg-[#F5F5F5] rounded-full"></span>
                                     <span>{category.title}</span>
                                 </h3>
-                                <p className="text-xs text-[#666666] dark:text-[#999999] mb-4">
+                                <p className="text-xs text-[#666666] dark:text-[#888888] mb-4">
                                     {category.description}
                                 </p>
 
@@ -37,10 +37,10 @@ const Skills = () => {
                                         return (
                                             <div
                                                 key={item.name}
-                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FAFAFA] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333] hover:border-[#666666] dark:hover:border-[#999999] transition-all duration-200"
+                                                className="flex items-center gap-2.5 p-2.5 rounded-lg bg-[#FAFAF9] dark:bg-[#181818] border border-[#DDDDDD] dark:border-[#333333] hover:border-[#666666] dark:hover:border-[#888888] transition-all duration-200"
                                             >
                                                 {Icon && <Icon className="w-5 h-5 flex-shrink-0" style={{ color: item.brandColor }} />}
-                                                <span className="text-xs font-medium text-[#000000] dark:text-[#FFFFFF] truncate">
+                                                <span className="text-xs font-medium text-[#2F2F2F] dark:text-[#F5F5F5] truncate">
                                                     {item.name}
                                                 </span>
                                             </div>

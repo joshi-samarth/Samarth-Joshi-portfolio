@@ -9,7 +9,7 @@ const Projects = () => {
     return (
         <section
             id="projects"
-            className="py-20 bg-[#FFFFFF] dark:bg-[#000000] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#FAFAF9] dark:bg-[#181818] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -24,12 +24,12 @@ const Projects = () => {
                     <div className="mb-12">
                         <div className="card-clean p-6 sm:p-8 space-y-6">
                             
-                            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#CCCCCC] dark:border-[#333333] pb-4">
+                            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#DDDDDD] dark:border-[#333333] pb-4">
                                 <div>
-                                    <span className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#CCCCCC]">
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#888888]">
                                         Featured Project
                                     </span>
-                                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#000000] dark:text-[#FFFFFF] mt-0.5">
+                                    <h3 className="text-2xl sm:text-3xl font-extrabold text-[#2F2F2F] dark:text-[#F5F5F5] mt-0.5">
                                         {featuredProject.title}
                                     </h3>
                                 </div>
@@ -58,7 +58,7 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            <p className="text-base text-[#666666] dark:text-[#CCCCCC] leading-relaxed">
+                            <p className="text-base text-[#666666] dark:text-[#B5B5B5] leading-relaxed">
                                 {featuredProject.shortDescription || featuredProject.description}
                             </p>
 
@@ -66,10 +66,10 @@ const Projects = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                                 {featuredProject.problemSolved && (
                                     <div className="space-y-2">
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#000000] dark:text-[#FFFFFF]">
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#2F2F2F] dark:text-[#F5F5F5]">
                                             Problem Solved
                                         </p>
-                                        <p className="text-sm text-[#666666] dark:text-[#CCCCCC] leading-relaxed">
+                                        <p className="text-sm text-[#666666] dark:text-[#B5B5B5] leading-relaxed">
                                             {featuredProject.problemSolved}
                                         </p>
                                     </div>
@@ -77,13 +77,13 @@ const Projects = () => {
 
                                 {((featuredProject.keyFeatures && featuredProject.keyFeatures.length > 0) || (featuredProject.achievements && featuredProject.achievements.length > 0)) && (
                                     <div className="space-y-2">
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#000000] dark:text-[#FFFFFF]">
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[#2F2F2F] dark:text-[#F5F5F5]">
                                             {featuredProject.keyFeatures ? "Key Features" : "Key Achievements"}
                                         </p>
                                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                                             {(featuredProject.keyFeatures || featuredProject.achievements || []).map((feat, fIdx) => (
-                                                <li key={fIdx} className="text-xs text-[#666666] dark:text-[#CCCCCC] flex items-start gap-2">
-                                                    <span className="text-[#000000] dark:text-[#FFFFFF] font-bold">•</span>
+                                                <li key={fIdx} className="text-xs text-[#666666] dark:text-[#B5B5B5] flex items-start gap-2">
+                                                    <span className="text-[#222222] dark:text-[#F5F5F5] font-bold">•</span>
                                                     <span>{feat}</span>
                                                 </li>
                                             ))}
@@ -93,8 +93,8 @@ const Projects = () => {
                             </div>
 
                             {/* Tech Stack */}
-                            <div className="pt-4 border-t border-[#CCCCCC] dark:border-[#333333]">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#999999] mb-3">
+                            <div className="pt-4 border-t border-[#DDDDDD] dark:border-[#333333]">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-[#666666] dark:text-[#888888] mb-3">
                                     Technologies Used
                                 </p>
                                 <div className="flex flex-wrap items-center gap-3">
@@ -103,10 +103,10 @@ const Projects = () => {
                                         return (
                                             <div
                                                 key={tech.name}
-                                                className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#FAFAFA] dark:bg-[#121212] border border-[#CCCCCC] dark:border-[#333333]"
+                                                className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#FAFAF9] dark:bg-[#181818] border border-[#DDDDDD] dark:border-[#333333]"
                                             >
                                                 <Icon className="w-4 h-4" style={{ color: tech.brandColor }} />
-                                                <span className="text-xs font-medium text-[#000000] dark:text-[#FFFFFF]">
+                                                <span className="text-xs font-medium text-[#2F2F2F] dark:text-[#F5F5F5]">
                                                     {tech.name}
                                                 </span>
                                             </div>

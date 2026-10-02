@@ -8,53 +8,49 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Monochrome Palette: #000000, #333333, #666666, #999999, #CCCCCC
-                palette: {
-                    black: '#000000',
-                    charcoal: '#333333',
-                    midgrey: '#666666',
-                    lightgrey: '#999999',
-                    silver: '#CCCCCC',
-                },
+                // Light mode:
+                // Background: #FAFAF9, Sections: #F2F2F1, Headings: #2F2F2F, Body: #666666, Muted: #999999, Borders: #DDDDDD, Buttons: #222222, Button hover: #000000
+                // Dark mode:
+                // Background: #181818, Sections: #222222, Headings: #F5F5F5, Body: #B5B5B5, Muted: #888888, Borders: #333333, Buttons: #F5F5F5, Button text: #181818
                 bg: {
-                    DEFAULT: '#FFFFFF',     // Main background (Light)
-                    secondary: '#FAFAFA',   // Secondary light section background
-                    card: '#FFFFFF',        // Light card background
+                    DEFAULT: '#FAFAF9',     // Light Background
+                    secondary: '#F2F2F1',   // Light Sections / Cards
+                    card: '#F2F2F1',
                 },
                 text: {
-                    primary: '#000000',      // Light primary text
-                    secondary: '#666666',    // Light secondary text
-                    muted: '#999999',        // Light muted text
+                    primary: '#2F2F2F',      // Light Headings
+                    secondary: '#666666',    // Light Body
+                    muted: '#999999',        // Light Muted
                 },
                 border: {
-                    DEFAULT: '#CCCCCC',      // Light border
-                    dark: '#333333',        // Dark border
+                    DEFAULT: '#DDDDDD',      // Light Borders
+                    dark: '#333333',        // Dark Borders
                 },
-                accent: {
-                    DEFAULT: '#000000',      // Signature black accent (Light mode)
-                    hover: '#333333',        // Black hover
+                btn: {
+                    DEFAULT: '#222222',      // Light Buttons
+                    hover: '#000000',        // Light Button Hover
                 },
                 dark: {
-                    bg: '#000000',           // Dark mode background (#000000)
-                    secondary: '#121212',    // Dark secondary background
-                    card: '#1A1A1A',         // Dark section card background
-                    cardHover: '#262626',    // Dark card hover
-                    text: '#FFFFFF',         // Light text in dark sections
-                    muted: '#999999',        // Muted text in dark sections
-                    silver: '#CCCCCC',       // Silver text/details in dark sections
-                    border: '#333333',       // Dark section border
-                    borderHover: '#666666',  // Dark border hover
-                    accent: '#FFFFFF',       // Crisp white accent in dark mode
-                    accentHover: '#CCCCCC',  // White hover in dark mode
+                    bg: '#181818',           // Dark Background
+                    secondary: '#222222',    // Dark Sections / Cards
+                    card: '#222222',
+                    cardHover: '#2A2A2A',
+                    text: '#F5F5F5',         // Dark Headings
+                    body: '#B5B5B5',         // Dark Body
+                    muted: '#888888',        // Dark Muted
+                    border: '#333333',       // Dark Borders
+                    btn: '#F5F5F5',          // Dark Buttons
+                    btnText: '#181818',      // Dark Button Text
+                    btnHover: '#FFFFFF',
                 }
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],
             },
             boxShadow: {
-                subtle: '0 2px 10px rgba(0, 0, 0, 0.05)',
-                card: '0 4px 20px rgba(0, 0, 0, 0.06)',
-                darkCard: '0 4px 20px rgba(0, 0, 0, 0.6)',
+                subtle: '0 2px 10px rgba(0, 0, 0, 0.04)',
+                card: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                darkCard: '0 4px 20px rgba(0, 0, 0, 0.4)',
             },
             borderRadius: {
                 button: '6px',

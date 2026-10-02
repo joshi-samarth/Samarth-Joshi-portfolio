@@ -32,7 +32,7 @@ const Experience = () => {
         <section
             id="experience"
             ref={ref}
-            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#F2F2F1] dark:bg-[#222222] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -51,7 +51,7 @@ const Experience = () => {
                     {/* Timeline */}
                     <div className="relative max-w-4xl mx-auto">
                         {/* Center Line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#CCCCCC] dark:bg-[#333333] hidden md:block" />
+                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#DDDDDD] dark:bg-[#333333] hidden md:block" />
 
                         {experience.map((item, index) => (
                             <motion.div
@@ -63,11 +63,11 @@ const Experience = () => {
                                 <div className={`flex items-center gap-4 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                                     }`}>
                                     {/* Timeline Dot */}
-                                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[#FFFFFF] dark:bg-[#000000] border-2 border-[#000000] dark:border-[#FFFFFF] items-center justify-center shadow-subtle z-10">
+                                    <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-[#222222] dark:bg-[#F5F5F5] border-2 border-[#222222] dark:border-[#F5F5F5] items-center justify-center shadow-subtle z-10">
                                         {item.type === 'work' ? (
-                                            <FaBriefcase className="text-[#000000] dark:text-[#FFFFFF] text-lg" />
+                                            <FaBriefcase className="text-[#FAFAF9] dark:text-[#181818] text-lg" />
                                         ) : (
-                                            <FaGraduationCap className="text-[#000000] dark:text-[#FFFFFF] text-lg" />
+                                            <FaGraduationCap className="text-[#FAFAF9] dark:text-[#181818] text-lg" />
                                         )}
                                     </div>
 
@@ -80,24 +80,24 @@ const Experience = () => {
                                         {/* Mobile Icon */}
                                         <div className="md:hidden mb-4">
                                             {item.type === 'work' ? (
-                                                <FaBriefcase className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
+                                                <FaBriefcase className="text-[#2F2F2F] dark:text-[#F5F5F5] text-xl" />
                                             ) : (
-                                                <FaGraduationCap className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
+                                                <FaGraduationCap className="text-[#2F2F2F] dark:text-[#F5F5F5] text-xl" />
                                             )}
                                         </div>
 
                                         {/* Date Badge */}
-                                        <div className="inline-flex items-center gap-2 bg-[#FAFAFA] dark:bg-[#121212] text-[#000000] dark:text-[#FFFFFF] border border-[#CCCCCC] dark:border-[#333333] px-3 py-1 rounded-md text-xs font-semibold mb-4">
+                                        <div className="inline-flex items-center gap-2 bg-[#FAFAF9] dark:bg-[#181818] text-[#2F2F2F] dark:text-[#F5F5F5] border border-[#DDDDDD] dark:border-[#333333] px-3 py-1 rounded-md text-xs font-semibold mb-4">
                                             <FaCalendar />
                                             {item.period}
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#000000] dark:text-[#FFFFFF] mb-1">
+                                        <h3 className="text-xl font-bold text-[#2F2F2F] dark:text-[#F5F5F5] mb-1">
                                             {item.title}
                                         </h3>
 
-                                        <div className="flex items-center gap-2 text-[#666666] dark:text-[#999999] text-xs font-medium mb-4">
-                                            <span className="font-semibold text-[#000000] dark:text-[#FFFFFF]">{item.company}</span>
+                                        <div className="flex items-center gap-2 text-[#666666] dark:text-[#B5B5B5] text-xs font-medium mb-4">
+                                            <span className="font-semibold text-[#2F2F2F] dark:text-[#F5F5F5]">{item.company}</span>
                                             <span>•</span>
                                             <span className="flex items-center gap-1">
                                                 <FaMapMarkerAlt className="text-xs" />
@@ -110,9 +110,9 @@ const Experience = () => {
                                                 {item.description.map((point, idx) => (
                                                     <li
                                                         key={idx}
-                                                        className="flex items-start gap-2 text-xs sm:text-sm text-[#666666] dark:text-[#CCCCCC]"
+                                                        className="flex items-start gap-2 text-xs sm:text-sm text-[#666666] dark:text-[#B5B5B5]"
                                                     >
-                                                        <span className="text-[#000000] dark:text-[#FFFFFF] mt-0.5">•</span>
+                                                        <span className="text-[#2F2F2F] dark:text-[#F5F5F5] mt-0.5">•</span>
                                                         <span>{point}</span>
                                                     </li>
                                                 ))}

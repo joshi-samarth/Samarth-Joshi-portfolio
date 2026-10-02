@@ -45,7 +45,7 @@ const Testimonials = () => {
         <section
             id="testimonials"
             ref={ref}
-            className="py-20 bg-[#FAFAFA] dark:bg-[#121212] border-t border-[#CCCCCC] dark:border-[#333333] transition-colors duration-300"
+            className="py-20 bg-[#F2F2F1] dark:bg-[#222222] border-t border-[#DDDDDD] dark:border-[#333333] transition-colors duration-300"
         >
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
@@ -77,36 +77,36 @@ const Testimonials = () => {
                             >
                                 {/* Quote Icon */}
                                 <div className="flex justify-start">
-                                    <div className="w-12 h-12 bg-[#FAFAFA] dark:bg-[#1A1A1A] border border-[#CCCCCC] dark:border-[#333333] rounded-full flex items-center justify-center">
-                                        <FaQuoteLeft className="text-[#000000] dark:text-[#FFFFFF] text-xl" />
+                                    <div className="w-12 h-12 bg-[#FAFAF9] dark:bg-[#181818] border border-[#DDDDDD] dark:border-[#333333] rounded-full flex items-center justify-center">
+                                        <FaQuoteLeft className="text-[#2F2F2F] dark:text-[#F5F5F5] text-xl" />
                                     </div>
                                 </div>
 
                                 {/* Testimonial Text */}
-                                <p className="text-[#666666] dark:text-[#CCCCCC] text-base md:text-lg leading-relaxed italic">
+                                <p className="text-[#666666] dark:text-[#B5B5B5] text-base md:text-lg leading-relaxed italic">
                                     "{testimonials[currentIndex].text}"
                                 </p>
 
                                 {/* Author Info */}
-                                <div className="flex items-center gap-4 pt-4 border-t border-[#CCCCCC] dark:border-[#333333]">
-                                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#000000] dark:border-[#FFFFFF]">
+                                <div className="flex items-center gap-4 pt-4 border-t border-[#DDDDDD] dark:border-[#333333]">
+                                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#222222] dark:border-[#F5F5F5]">
                                         <img
                                             src={testimonials[currentIndex].image}
                                             alt={testimonials[currentIndex].name}
                                             className="w-full h-full object-cover"
                                             onError={(e) => {
-                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=000000&color=FFFFFF&size=200`;
+                                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[currentIndex].name)}&background=222222&color=FFFFFF&size=200`;
                                             }}
                                         />
                                     </div>
                                     <div>
-                                        <h4 className="text-base font-bold text-[#000000] dark:text-[#FFFFFF]">
+                                        <h4 className="text-base font-bold text-[#2F2F2F] dark:text-[#F5F5F5]">
                                             {testimonials[currentIndex].name}
                                         </h4>
-                                        <p className="text-xs font-semibold text-[#666666] dark:text-[#999999]">
+                                        <p className="text-xs font-semibold text-[#666666] dark:text-[#888888]">
                                             {testimonials[currentIndex].role}
                                         </p>
-                                        <p className="text-xs text-[#999999] dark:text-[#666666]">
+                                        <p className="text-xs text-[#999999] dark:text-[#888888]">
                                             {testimonials[currentIndex].company}
                                         </p>
                                     </div>
@@ -118,7 +118,7 @@ const Testimonials = () => {
                         <div className="flex justify-center items-center gap-4 mt-8">
                             <button
                                 onClick={prevTestimonial}
-                                className="w-10 h-10 rounded-full border border-[#CCCCCC] dark:border-[#333333] bg-white dark:bg-[#1A1A1A] flex items-center justify-center text-[#000000] dark:text-[#FFFFFF] hover:border-[#000000] dark:hover:border-[#FFFFFF] transition-colors"
+                                className="w-10 h-10 rounded-full border border-[#DDDDDD] dark:border-[#333333] bg-[#FAFAF9] dark:bg-[#181818] flex items-center justify-center text-[#2F2F2F] dark:text-[#F5F5F5] hover:border-[#222222] dark:hover:border-[#F5F5F5] transition-colors"
                                 aria-label="Previous testimonial"
                             >
                                 <FaChevronLeft />
@@ -131,8 +131,8 @@ const Testimonials = () => {
                                         key={index}
                                         onClick={() => goToTestimonial(index)}
                                         className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                                                ? 'bg-[#000000] dark:bg-[#FFFFFF] w-6'
-                                                : 'bg-[#CCCCCC] dark:bg-[#333333] hover:bg-[#666666]'
+                                                ? 'bg-[#222222] dark:bg-[#F5F5F5] w-6'
+                                                : 'bg-[#DDDDDD] dark:bg-[#333333] hover:bg-[#666666]'
                                             }`}
                                         aria-label={`Go to testimonial ${index + 1}`}
                                     />
@@ -141,7 +141,7 @@ const Testimonials = () => {
 
                             <button
                                 onClick={nextTestimonial}
-                                className="w-10 h-10 rounded-full border border-[#CCCCCC] dark:border-[#333333] bg-white dark:bg-[#1A1A1A] flex items-center justify-center text-[#000000] dark:text-[#FFFFFF] hover:border-[#000000] dark:hover:border-[#FFFFFF] transition-colors"
+                                className="w-10 h-10 rounded-full border border-[#DDDDDD] dark:border-[#333333] bg-[#FAFAF9] dark:bg-[#181818] flex items-center justify-center text-[#2F2F2F] dark:text-[#F5F5F5] hover:border-[#222222] dark:hover:border-[#F5F5F5] transition-colors"
                                 aria-label="Next testimonial"
                             >
                                 <FaChevronRight />
